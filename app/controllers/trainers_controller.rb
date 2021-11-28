@@ -1,6 +1,6 @@
 class TrainersController < ApplicationController
     before_action :set_trainer, only: [:update, :destroy] 
-    skip_before_action :authorized, only: :create
+    # skip_before_action :authorized, only: :create
 
     def index 
         trainer = Trainer.all

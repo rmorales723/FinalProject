@@ -1,4 +1,4 @@
 class Appointment < ApplicationRecord
-    beloongs_to :trainer
-    beloongs_to :client
+    belongs_to :trainer, optional: true
+    belongs_to :client, optional: true
 end
