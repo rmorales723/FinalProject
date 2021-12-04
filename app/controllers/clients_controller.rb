@@ -1,14 +1,15 @@
 class ClientsController < ApplicationController
-    before_action :set_client, only: [:update, :destroy] 
-
+    before_action :set_client, only: [:show, :update, :destroy] 
+    skip_before_action :authorized
+    
     def index 
         client = Client.all
         render json: client, status: :ok
     end
 
     def show
-        client = Client.find_by(id: params[:id])
-        render json: client, status: :ok
+        # client = Client.find_by(id: params[:id])
+        render json: @client, status: :ok
     end
 
     def create
@@ -17,7 +18,7 @@ class ClientsController < ApplicationController
     end
 
     def update
-        @client = Client.update(client_params)
+        @client = Client.update!(client_params)
         render json: @client, status: :accepted
     end
 

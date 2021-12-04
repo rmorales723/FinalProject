@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
     before_action :set_appointment, only: [:update, :destroy] 
-    # skip_before_action :authorized
+     skip_before_action :authorized
 
     def index 
         appointment = Appointment.all

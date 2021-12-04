@@ -19,8 +19,8 @@ function NewClient() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                name,
-                number,
+                name: name,
+                number: number,
                 img_url: img_url
             }),
         })
@@ -52,7 +52,7 @@ function NewClient() {
                         {errors ?
                             <Alert variant="danger">{errors && displayError()}</Alert> : <Alert variant="danger="></Alert>
                         }
-                        <p>Add Client/p>
+                        <p>Add Client</p>
                         <input
                             onChange={(event) => setName(event.target.value)}
                             value={name}
@@ -63,7 +63,7 @@ function NewClient() {
                             name="name" />
                         <input
                             onChange={(event) => setNumber(event.target.value)}
-                            value={item_name}
+                            value={number}
                             className="form-field"
                             placeholder="Number"
                             type="text"
@@ -71,25 +71,15 @@ function NewClient() {
                             name="number" />
                         <input
                             onChange={(event) => setImg(event.target.value)}
-                            value={image_url}
+                            value={img_url}
                             className="form-field"
                             placeholder="Img"
                             type="text"
                             id="img_url"
                             name="img_url" />
-                        {/* <textarea
-                            onChange={(event) => setGoals(event.target.value)}
-                            value={goals}
-                            className="form-field"
-                            placeholder="Goals"
-                            type="text"
-                            id="goals"
-                            name="goals"
-                            form="usrform">Enter goals here...
-                        </textarea> */}
                         <Button variant="success" type="submit">Submit</Button>{' '}
                     </form>
-                    <div className="new-member-form-container-container"> </div>
+                    <div className="new-client-form-container-container"> </div>
                 </ div>
             </div>
         </div>

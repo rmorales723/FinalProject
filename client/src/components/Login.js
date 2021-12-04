@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Alert } from "react-bootstrap"
 import { useHistory, Link } from "react-router-dom";
 import { Button } from 'react-bootstrap'
@@ -40,21 +40,19 @@ function Login({ setCurrentUser }) {
         <div className="form-container">
           <h3>Login</h3>
           <form className="register-form" onSubmit={handleSubmit}>
-            {error ?
-              <Alert variant="danger">{error}</Alert> : <Alert variant="danger="></Alert>
-            }
+            
             <input
-              className="custom-inputs"
+             
               type="text"
-              className="form-field"
+              className="form-field custom-inputs"
               placeholder="Username"
               value={username}
               onChange={(event) => setUsername(event.target.value)}
             />
             <input
-              className="custom-inputs"
+             
               type="password"
-              className="form-field"
+              className="form-field custom-inputs"
               placeholder="Password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}

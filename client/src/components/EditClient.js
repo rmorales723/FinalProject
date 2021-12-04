@@ -1,6 +1,5 @@
 import { Button } from 'react-bootstrap';
-import { useState } from 'react';
-import { useEffect } from 'react'
+import { useState, useEffect} from 'react';
 import { useHistory, useParams } from 'react-router';
 import '../App.css';
 
@@ -14,11 +13,11 @@ function EditClient() {
 
     useEffect(() => {
         prePopulateClients();
-    }, [])
+    })
     function prePopulateClients() {
         fetch(`/clients/${id}`)
             .then(res => res.json())
-            .then(claim => {
+            .then(client => {
                 setName(client.name)
                 setNumber(client.number)
                 setImg(client.img_url)
@@ -75,16 +74,6 @@ function EditClient() {
                             type="text"
                             id="img_url"
                             name="img_url" />
-                        {/* <textarea
-                            onChange={(event) => setGoals(event.target.value)}
-                            value={goals}
-                            className="form-field"
-                            placeholder="goals"
-                            type="text"
-                            id="goals"
-                            name="goals"
-                            form="usrform">Enter goals here...
-                        </textarea> */}
                         <Button variant="success" type="submit">Submit</Button>{' '}
                     </form>
                     <div className="new-member-form-container-container"> </div>

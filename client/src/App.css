@@ -12,6 +12,16 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+.App {
+  text-align: center;
+}
+
+
 
 .App-header {
   background-color: #282c34;
