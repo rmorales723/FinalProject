@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 
-function Client() {
-    const [client, setClient] = useState([])
+function Clients() {
+    const [clients, setClients] = useState([])
+    
+    console.log('i am in client js');
 
     useEffect(() => {
         fetch("/clients")
             .then((res) => res.json())
-            .then((clients) => setClient(clients))
+            .then((clients) => setClients(clients))
     }, [])
 
     const deleteClients = (event) => {
@@ -18,15 +20,16 @@ function Client() {
                 "Content-Type": "application/json",
             },
         }).then(() => {
-            const filterClients = client.filter(client => {
-                return client.id !== event.target.id;
+            const filterClients = clients.filter(client => {
+                return client.id != event.target.id;
             })
-            return setClient(filterClients)
+            return setClients(filterClients)
         });
     }
 
+    
     const renderClients = () => {
-        return client.map((client) => {
+        return clients.map((client) => {
             return (
                 <div className="card-box">
                     <Card className="card-size" style={{ width: '18rem' }}>
@@ -61,4 +64,4 @@ function Client() {
     );
 }
 
-export default Client;
+export default Clients;

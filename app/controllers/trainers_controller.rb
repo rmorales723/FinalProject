@@ -14,6 +14,7 @@ class TrainersController < ApplicationController
 
     def create
         trainer = Trainer.create!(trainer_params)
+        session[:trainer_id] = trainer.id
         render json: trainer, status: :created
     end
 
@@ -30,7 +31,7 @@ class TrainersController < ApplicationController
     private
 
     def trainer_params
-        params.require(:trainer).permit(:name, :skill, :credential)
+        params.require(:trainer).permit(:password, :username, :name, :skill, :credential)
     end
 
     def set_trainer

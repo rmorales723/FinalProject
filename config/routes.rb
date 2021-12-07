@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :clients
   resources :trainers
   get "/me", to: "trainers#show"
-  post "/", to: "trainers#create"
-  post "/", to: "sessions#create"
-  delete "/", to: "sessions#destroy"
+  post "/signup", to: "trainers#create"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

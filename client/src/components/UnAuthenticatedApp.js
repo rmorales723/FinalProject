@@ -5,6 +5,7 @@ import SignUp from './SignUp'
 
 
 function UnAuthenticatedApp({ setCurrentUser }) {
+    console.log('Rendered UnAuthenticatedApp');
   return (
     <Switch>
       <Route exact path="/">

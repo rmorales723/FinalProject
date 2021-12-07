@@ -46,3 +46,97 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.body-app {
+  /* background: #76b852; */
+  background: radial-gradient(circle, rgb(35, 90, 185, .81), white);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-button {
+  margin-top: 25px;
+}
+
+.body-app-edit {
+  /* background: #76b852; */
+  background: radial-gradient(circle, rgb(196, 189, 98), white);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-url-size {
+  width:  100%;
+  height: 200px;
+  margin-bottom: 1px;
+  object-fit: cover;
+}
+
+.button-organizer{
+align-items: baseline;
+}
+
+.card-size {
+  flex-direction: row;
+  justify-content: center;
+  height: 450px;
+}
+
+.body-client {
+  /* background: #76b852; */
+  background: radial-gradient(circle, rgb(67, 113, 151), white);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.form-outsider {
+  margin-top: 40px
+}
+.form-log {
+  margin: auto;
+}
+
+.form-container {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.form-field {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 16px;
+  border: 0;
+  background-color: rgb(230, 230, 230);
+  font-family: "Roboto", sans-serif;
+}
+
+.card-box {
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-evenly;
+  transition: 0.3s;
+  flex-direction: row;
+  justify-content: center;
+  font-size: small;
+  padding: 8px;
+  float: left;
+}

@@ -36,6 +36,7 @@ function Signup({ setCurrentUser }) {
         if (response.ok) {
           response.json().then((trainer) => {
             setCurrentUser(trainer);
+            localStorage.setItem("currentUserId", trainer.id);
             history.push('/clients')
           })
         } else {
@@ -74,13 +75,13 @@ function Signup({ setCurrentUser }) {
                 type="password"
                 id="password"
                 className="form-field"
-                placeholder="Password"
+                placeholder="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
               <input
                 type="skill"
-                ide="skill"
+                id="skill"
                 className="form-field"
                 placeholder="skill"
                 value={skill}
@@ -88,7 +89,7 @@ function Signup({ setCurrentUser }) {
               />
               <input
                 type="credential"
-                ide="credential"
+                id="credential"
                 className="form-field"
                 placeholder="credential"
                 value={credential}
@@ -108,4 +109,4 @@ function Signup({ setCurrentUser }) {
   )
 }
 
-export default withRouter(Signup)
+export default Signup

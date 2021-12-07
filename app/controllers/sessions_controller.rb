@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
-    
+    skip_before_action :authorized, only: :create
     # post '/login'
     def create
-        user = User.find_by_username(params[:username])
-        if user&.authenticate(params[:password])
-            session[:user_id] = user.id
-            render json: user, status: :ok
+        trainer = Trainer.find_by(username: params[:username])
+        if trainer&.authenticate(params[:password])
+            session[:trainer_id] = trainer.id
+            render json: trainer, status: :ok
         else
             render json: { error: "Invalid username or password" }, status: :unauthorized
         end
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
     # delete '/logout'
     def destroy
-        session.delete :user_id
+        session.delete :trainer_id
         head :no_content
     end
 end

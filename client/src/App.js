@@ -12,6 +12,15 @@ function App() {
   
 
   useEffect(() => {
+    const loggedInUserId = localStorage.getItem("currentUserId");
+    setCurrentUser(loggedInUserId);
+    console.log(`loggedInUserId: ${loggedInUserId}`);
+    
+    if(loggedInUserId) {
+      setCurrentUser(loggedInUserId);
+      return; 
+    }
+
     fetch('/me', {
       credentials: 'include'
     })
@@ -19,7 +28,11 @@ function App() {
         if (res.ok) {
           res.json().then((trainer) => {
             setCurrentUser(trainer)
-          })
+            console.log(`trainer: ${JSON.stringify(trainer)}`);
+            if (trainer) {              
+              console.log(`trainer.id: ${trainer.id}`);
+              localStorage.setItem("currentUserId", trainer.id);
+            }          })
            } else {
             //  setAuthChecked(true)
         }

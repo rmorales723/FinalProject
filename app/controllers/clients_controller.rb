@@ -18,8 +18,12 @@ class ClientsController < ApplicationController
     end
 
     def update
-        @client = Client.update!(client_params)
-        render json: @client, status: :accepted
+        @client = Client.find(params[:id])
+        if @client.update(client_params)
+            render json: @client, status: :accepted
+        else
+            render json: @client.errors.messages.join(", "), status: 422
+        end
     end
 
     def destroy

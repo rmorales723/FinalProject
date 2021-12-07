@@ -25,6 +25,7 @@ function Login({ setCurrentUser }) {
       if (response.ok) {
         response.json().then((user) => {
           setCurrentUser(user);
+          localStorage.setItem("currentUserId", user.id);
           history.push('/')
         });
       } else {
@@ -40,19 +41,21 @@ function Login({ setCurrentUser }) {
         <div className="form-container">
           <h3>Login</h3>
           <form className="register-form" onSubmit={handleSubmit}>
-            
+            {error ?
+              <Alert variant="danger">{error}</Alert> : <Alert variant="danger="></Alert>
+            }
             <input
-             
+              className="custom-inputs"
               type="text"
-              className="form-field custom-inputs"
+              className="form-field"
               placeholder="Username"
               value={username}
               onChange={(event) => setUsername(event.target.value)}
             />
             <input
-             
+              className="custom-inputs"
               type="password"
-              className="form-field custom-inputs"
+              className="form-field"
               placeholder="Password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
