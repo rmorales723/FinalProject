@@ -62,7 +62,7 @@ body {
 
 .body-app-edit {
   /* background: #76b852; */
-  background: radial-gradient(circle, rgb(196, 189, 98), white);
+  background: radial-gradient(circle, rgb(35, 90, 185, .81), white);
   display: flex;
   min-height: 100vh;
   justify-content: center;
@@ -88,7 +88,7 @@ align-items: baseline;
 
 .body-client {
   /* background: #76b852; */
-  background: radial-gradient(circle, rgb(67, 113, 151), white);
+  background: radial-gradient(circle, rgb(35, 90, 185, 81), white);
   display: flex;
   min-height: 100vh;
   justify-content: center;

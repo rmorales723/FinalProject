@@ -29,7 +29,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         <div className="App">
       <nav>
         <NavigationBar />
-        <span>Logged in as {currentUser.username} <button onClick={handleLogout}>Logout</button></span>
+        <span>Logged in as {currentUser.username}<button onClick={handleLogout}>Logout</button></span>
       </nav>
       <div>
         <Router>

@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AuthenticatedApp from './components/AuthenticatedApp'
 import UnAuthenticatedApp from './components/UnAuthenticatedApp'
+import AppointmentsForm from './components/AppointmentsForm'
+import AppointmentsContainer from './components/AppointmentsContainer'
+
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -41,7 +45,9 @@ function App() {
 
   //  if(!authChecked) { return <div></div>}
   return (
+
     <div className="App">
+      <AppointmentsContainer/>
       <Router>
         {currentUser ? (
           <AuthenticatedApp

@@ -41,9 +41,9 @@ function Clients() {
                             <div className="button-organizer">
                                 <div className="d-grid gap-2">
                                     <Link className="d-grid gap-2" to={`/clients/${client.id}/edit`}>
-                                        <Button variant="primary" size="sm" >Edit</Button>
+                                        <Button variant="primary" size="sm" >EDIT</Button>
                                     </Link>
-                                    <Button id={client.id} className="d-grid gap-2" variant="danger" size="sm" onClick={deleteClients}>Delete</Button>
+                                    <Button id={client.id} className="d-grid gap-2" variant="danger" size="sm" onClick={deleteClients}>DELETE</Button>
                                 </div>
                             </div>
                         </Card.Body>
