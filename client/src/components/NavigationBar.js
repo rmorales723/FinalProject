@@ -10,6 +10,7 @@ function NavigationBar() {
                 <Container>
                     <Navbar.Brand href="/clients">CLIENTS</Navbar.Brand>
                     <Nav className="me-auto">
+                    <Nav.Link href="/"></Nav.Link>
                         <Nav.Link href="/clients"></Nav.Link>
                         <Nav.Link href="/clients/new">ADD CLIENT</Nav.Link>
                     </Nav>

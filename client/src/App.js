@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AuthenticatedApp from './components/AuthenticatedApp'
 import UnAuthenticatedApp from './components/UnAuthenticatedApp'
-import AppointmentsForm from './components/AppointmentsForm'
+import AppointmentForm from './components/AppointmentForm'
 import AppointmentsContainer from './components/AppointmentsContainer'
 
 
@@ -38,15 +38,14 @@ function App() {
               localStorage.setItem("currentUserId", trainer.id);
             }          })
            } else {
-            //  setAuthChecked(true)
         }
       })
   }, [])
 
   //  if(!authChecked) { return <div></div>}
   return (
-
     <div className="App">
+      <AppointmentForm/>
       <AppointmentsContainer/>
       <Router>
         {currentUser ? (

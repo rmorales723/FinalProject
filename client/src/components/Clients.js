@@ -4,8 +4,6 @@ import { Card, Button } from "react-bootstrap";
 
 function Clients() {
     const [clients, setClients] = useState([])
-    
-    console.log('i am in client js');
 
     useEffect(() => {
         fetch("/clients")
