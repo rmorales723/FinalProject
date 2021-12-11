@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router
 import Client from './Clients'
 import EditClient from './EditClient'
 import NewClient from './NewClient'
+import Appointment from './Appointment'
+import AppointmentForm from './AppointmentForm'
+import AppointmentsContainer from './AppointmentsContainer';
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
     console.log('Rendered AuthenticatedApp');
@@ -54,6 +57,20 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
               currentUser={currentUser} 
               setCurrentUser={setCurrentUser} />
             </Route>
+
+            <Route exact path="/appointments" component={AppointmentsContainer}>
+                <AppointmentsContainer />
+            </Route>
+            <Route exact path="/appointments/new" component={AppointmentForm} >
+              <AppointmentForm 
+              currentUser={currentUser} 
+              setCurrentUser={setCurrentUser} />
+            </Route>
+            {/* <Route exact path="/appointments/:id/edit" component={EditAppointment} >
+              <EditAppointment 
+              currentUser={currentUser} 
+              setCurrentUser={setCurrentUser} />
+            </Route> */}
           </Switch>
         </ Router>
       </div>

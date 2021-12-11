@@ -45,8 +45,7 @@ function App() {
   //  if(!authChecked) { return <div></div>}
   return (
     <div className="App">
-      <AppointmentForm/>
-      <AppointmentsContainer/>
+      {/* <AppointmentForm/> */}    
       <Router>
         {currentUser ? (
           <AuthenticatedApp

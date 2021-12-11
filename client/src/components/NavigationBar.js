@@ -1,22 +1,21 @@
 import React from 'react';
-import { Nav, Navbar, Container } from 'react-bootstrap'
+import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 
 function NavigationBar() {
-    return (
-        
-        <div className="nav-links">
-            <Navbar bg="primary" variant="dark">
+    return (        
+        <div>            
+            <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand href="/clients">CLIENTS</Navbar.Brand>
                     <Nav className="me-auto">
                     <Nav.Link href="/"></Nav.Link>
-                        <Nav.Link href="/clients"></Nav.Link>
                         <Nav.Link href="/clients/new">ADD CLIENT</Nav.Link>
                     </Nav>
-                    <NavLink activeClassName="active" to={'/clients'}>
-                       {/* Clients All */}
-                    </NavLink>
+                    <Navbar.Brand href="/appointments">APPOINTMENTS</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="/appointments/new">ADD APPOINTMENT</Nav.Link>
+                    </Nav>
                 </Container>
             </Navbar>
         </div>

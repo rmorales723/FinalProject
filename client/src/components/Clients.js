@@ -25,13 +25,22 @@ function Clients() {
         });
     }
 
+    const styles = {
+        cardImage: {
+            objectFit: 'cover',
+            borderRadius: 55,
+            width: '100%',
+            height: '100%'
+        }
+      }
+
     
     const renderClients = () => {
         return clients.map((client) => {
             return (
                 <div className="card-box">
                     <Card className="card-size" style={{ width: '18rem' }}>
-                        <Card.Img className="img-url-size" variant="top" src={client.img_url} />
+                        <Card.Img style={styles.cardImage} className="img-url-size" variant="top" src={client.img_url} />
                         <Card.Body>
                             <Card.Title>{client.name}</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">{client.number}</Card.Subtitle>

@@ -12,8 +12,6 @@ function AppointmentForm() {
     const [time, setTime] = useState('')
     const [errors, setErrors] = useState("")
 
-
-
     const addAppointment = () => {
       return {
           method: 'POST',
@@ -95,7 +93,7 @@ return (
                         type="text"
                         id="time"
                         name="time" /> 
-                    <Button variant="success" type="submit">Submit</Button>{' '}
+                    <Button variant="success" type="submit">Submit</Button>{' '}                    
                 </form>
                 <div className="new-appointment-form-container-container"> </div>
             </ div>
