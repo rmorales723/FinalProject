@@ -1,6 +1,6 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
 import { Button } from "react-bootstrap";
+
 
 const Appointment = ({ id, client_name, date, time, appointments, setAppointments }) => {
 
@@ -23,11 +23,11 @@ const deleteAppointment = (event) => {
             <p>{client_name}</p>
             <p>{date}</p>
             <p>{time}</p>
+            <Button variant="success" type="submit">EDIT</Button>{' '}
             <Button id={id} className="d-grid gap-2" variant="danger" size="sm" onClick={deleteAppointment}>DELETE</Button>
             <hr />
         </div>
     )
   }
-
 
 export default Appointment;

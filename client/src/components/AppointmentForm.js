@@ -5,7 +5,6 @@ import { Alert } from 'react-bootstrap'
 
 function AppointmentForm() {
     const [appointments, setAppointments] = useState([])
-    // const { id } = useParams()
     const history = useHistory()
     const [client_name, setClient_Name] = useState('')
     const [date, setDate] = useState('')

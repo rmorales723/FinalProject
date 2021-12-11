@@ -7,6 +7,7 @@ import NewClient from './NewClient'
 import Appointment from './Appointment'
 import AppointmentForm from './AppointmentForm'
 import AppointmentsContainer from './AppointmentsContainer';
+import EditAppointment from './EditAppointment'
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
     console.log('Rendered AuthenticatedApp');
@@ -66,11 +67,11 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
               currentUser={currentUser} 
               setCurrentUser={setCurrentUser} />
             </Route>
-            {/* <Route exact path="/appointments/:id/edit" component={EditAppointment} >
+            <Route exact path="/appointments/:id/edit" component={EditAppointment} >
               <EditAppointment 
               currentUser={currentUser} 
               setCurrentUser={setCurrentUser} />
-            </Route> */}
+            </Route>
           </Switch>
         </ Router>
       </div>
