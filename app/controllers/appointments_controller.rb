@@ -1,15 +1,16 @@
 class AppointmentsController < ApplicationController
-    before_action :set_appointment, only: [:update, :destroy] 
+    before_action :set_appointment, only: [:show, :update, :destroy] 
      skip_before_action :authorized
 
     def index 
-        appointment = Appointment.all
+        appointment = Appointment.order(updated_at: :desc)
         render json: appointment, status: :ok
     end
 
     def show
-        appointment = Appointment.find_by(id: params[:id])
-        render json: appointment, status: :ok
+    #     appointment = Appointment.find_by(id: params[:id])
+    #     render json: appointment, status: :ok
+        render json: @appointment, status: :ok
     end
 
     def create
@@ -18,7 +19,7 @@ class AppointmentsController < ApplicationController
     end
 
     def update
-        @appointment = Appointment.update(appointment_params)
+        @appointment.update!(appointment_params)
         render json: @appointment, status: :accepted
     end
 

@@ -12,7 +12,7 @@ useEffect(()=>{
 
 
 const appointmentsToRender = () => {
-   return appointments.map((appointment) => <Appointment id={appointment.id} client_name = {appointment.client_name} date = {appointment.date} time = {appointment.time} appointments={appointments} setAppointments={setAppointments} /> )
+   return appointments.map((appointment) => <Appointment id={appointment.id} client_name = {appointment.client_name} date = {appointment.date} time = {appointment.time} appointments={appointments.appointments} setAppointments={setAppointments} /> )
 }
 
 return(

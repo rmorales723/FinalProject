@@ -1,5 +1,9 @@
-import React from 'react'
-import { Button } from "react-bootstrap";
+import { Button, Card } from 'react-bootstrap';
+import { useState, useEffect} from 'react';
+import { useHistory, useParams } from 'react-router';
+import EditAppointment from './EditAppointment';
+import { Link } from "react-router-dom";
+import '../App.css';
 
 
 const Appointment = ({ id, client_name, date, time, appointments, setAppointments }) => {
@@ -18,12 +22,19 @@ const deleteAppointment = (event) => {
     });
 }
 
+const history = useHistory();
+
+const editAppointment = (event) => {
+    history.push(`/appointments/${id}/edit`);
+}
+
     return(
         <div>
             <p>{client_name}</p>
             <p>{date}</p>
             <p>{time}</p>
-            <Button variant="success" type="submit">EDIT</Button>{' '}
+            <br />            
+            <Button id={id} className="d-grid gap-2" variant="danger" size="sm" onClick={editAppointment}>EDIT</Button>            
             <Button id={id} className="d-grid gap-2" variant="danger" size="sm" onClick={deleteAppointment}>DELETE</Button>
             <hr />
         </div>

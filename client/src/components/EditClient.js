@@ -23,7 +23,6 @@ function EditClient() {
                 setImg(client.img_url)
             })
     }
-                
 
     const handleOnSubmit = (event) => {
         event.preventDefault()
@@ -46,6 +45,9 @@ function EditClient() {
         }
     })
     }
+
+                
+
 
     return (
         <div className="body-app-edit">
@@ -89,3 +91,4 @@ function EditClient() {
 }
 
 export default EditClient;
+
