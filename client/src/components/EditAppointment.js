@@ -7,7 +7,6 @@ import '../App.css';
 function EditAppointment() {
     const { id } = useParams()
     const history = useHistory()
-    // const [appointment, setAppointment] = useState('')
     const [clientName, setClientName] = useState('')
     const [date, setDate] = useState('')
     const [time, setTime] = useState('')
@@ -27,7 +26,7 @@ function EditAppointment() {
 
     const handleOnSubmit = (event) => {
         event.preventDefault()
-        console.log('UPDATING !!!');
+        // console.log('UPDATING !!!');
         fetch(`/appointments/${id}`, {
             method: 'PATCH',
             headers: {
@@ -78,7 +77,8 @@ function EditAppointment() {
                     type ="text"
                     id="Time"
                     name="Time" />
-                    <br />                
+                    <br />           
+                    <Button onClick={handleOnSubmit} class="btn btn-primary" to="/appointments">Back</Button>     
                     <Button onClick={handleOnSubmit} variant="success" type="submit">Submit</Button>{' '}
                 <div className="new-member-form-container-container"> </div>
             </form>
