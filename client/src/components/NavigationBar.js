@@ -2,22 +2,27 @@ import React from 'react';
 import { Nav, Container, NavDropdown } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar'
+import { Button, Card } from 'react-bootstrap';
 
-function NavigationBar() {
+function NavigationBar({handleLogout}) {
     return (        
         <div>            
             <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Brand href="/clients">CLIENTS</Navbar.Brand>
-                    <Nav className="me-auto">
-                    <Nav.Link href="/"></Nav.Link>
-                    <Nav.Link href="/clients/new">ADD CLIENT</Nav.Link>
-                    </Nav>
-                    <Navbar.Brand href="/appointments">APPOINTMENTS</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="/appointments/new">ADD APPOINTMENT</Nav.Link>
-                    </Nav>
-                </Container>
+                <Nav className="me-auto">                                    
+                    <Nav.Link href="/clients">
+                        <Button>CLIENTS</Button>
+                    </Nav.Link>
+                    <Nav.Link href="/clients/new">                        
+                        <Button>ADD CLIENT</Button>                        
+                    </Nav.Link>
+                    <Nav.Link href="/appointments">
+                        <Button>APPOINTMENTS</Button>                        
+                    </Nav.Link>
+                    <Nav.Link href="/appointments/new">
+                        <Button>ADD APPOINTMENT</Button>
+                    </Nav.Link>
+                    <Button onClick={handleLogout}>Logout</Button>
+                </Nav>
             </Navbar>
         </div>
     )

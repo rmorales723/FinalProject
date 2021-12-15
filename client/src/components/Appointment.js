@@ -27,17 +27,25 @@ const history = useHistory();
 const editAppointment = (event) => {
     history.push(`/appointments/${id}/edit`);
 }
-
     return(
-        <div>
-            <p>{client_name}</p>
-            <p>{date}</p>
-            <p>{time}</p>
-            <br />            
-            <Button id={id} className="d-grid gap-2" variant="danger" size="sm" onClick={editAppointment}>EDIT</Button>            
-            <Button id={id} className="d-grid gap-2" variant="danger" size="sm" onClick={deleteAppointment}>DELETE</Button>
-            <hr />
-        </div>
+        <div className="card-box">
+            <Card className="card-size" style={{ width: '18rem' }}>                
+                <Card.Body>
+                    <Card.Title>{client_name}</Card.Title>                    
+                    <Card.Text>{date}</Card.Text>
+                    <Card.Text>{time}</Card.Text>
+                    <br />
+
+                    <Card.Text>
+                        <Button id={id} variant="primary" size="sm" onClick={editAppointment}>EDIT</Button>
+                    </Card.Text>
+
+                    <Card.Text>
+                        <Button id={id} variant="danger" size="sm" onClick={deleteAppointment}>DELETE</Button>
+                    </Card.Text>                                    
+                </Card.Body>
+            </Card>
+        </div>        
     )
   }
 

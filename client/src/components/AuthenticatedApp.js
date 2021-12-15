@@ -32,8 +32,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
     return (
         <div className="App">
       <nav>
-        <NavigationBar />
-        <span>Logged in as {currentUser.username}<button onClick={handleLogout}>Logout</button></span>
+        <NavigationBar handleLogout={handleLogout} />        
       </nav>
       <div>
         <Router>
@@ -58,7 +57,6 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
               currentUser={currentUser} 
               setCurrentUser={setCurrentUser} />
             </Route>
-
             <Route exact path="/appointments" component={AppointmentsContainer}>
                 <AppointmentsContainer />
             </Route>

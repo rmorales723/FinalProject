@@ -77,8 +77,10 @@ function EditAppointment() {
                     type ="text"
                     id="Time"
                     name="Time" />
-                    <br />           
+                    <br />
                     <Button onClick={handleOnSubmit} class="btn btn-primary" to="/appointments">Back</Button>     
+                    <br />
+                    <br />
                     <Button onClick={handleOnSubmit} variant="success" type="submit">Submit</Button>{' '}
                 <div className="new-member-form-container-container"> </div>
             </form>

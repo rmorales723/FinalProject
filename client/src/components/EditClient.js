@@ -3,7 +3,6 @@ import { useState, useEffect} from 'react';
 import { useHistory, useParams } from 'react-router';
 import '../App.css';
 
-
 function EditClient() {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
@@ -14,6 +13,7 @@ function EditClient() {
     useEffect(() => {
         upDateClient();
     }, [])
+
     function upDateClient() {
         fetch(`/clients/${id}`)
             .then(res => res.json())
@@ -25,7 +25,8 @@ function EditClient() {
     }
 
     const handleOnSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
+
         fetch(`/clients/${id}`, {
             method: 'PATCH',
             headers: {
@@ -40,21 +41,18 @@ function EditClient() {
             .then((res) => {
                 if (res.ok) {
                     res.json().then(() => {
-                history.push('/appointments')
+                history.push('/clients')
             })
         }
     })
     }
-
-                
-
 
     return (
         <div className="body-app-edit">
             
             <div className="form-outsider">
                 <div className="form-container">
-                    <form className="register-form" onSubmit={handleOnSubmit}>
+                    <form className="register-form">
                         <p>Edit Client</p>                        
                         <input
                             onChange={(event) => setName(event.target.value)}
@@ -80,8 +78,7 @@ function EditClient() {
                             type="text"
                             id="img_url"
                             name="img_url" />
-                        <Button variant="success" type="submit">Submit</Button>{' '}
-                        
+                        <Button onClick={handleOnSubmit} variant="success" type="submit">Submit</Button>{' '}                        
                     </form>
                     <div className="new-member-form-container-container"> </div>
                 </ div>

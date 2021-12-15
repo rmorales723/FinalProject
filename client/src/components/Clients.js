@@ -35,7 +35,7 @@ function Clients() {
       }
 
     
-    const renderClients = () => {
+    const renderClients = () => {        
         return clients.map((client) => {
             return (
                 <div className="card-box">
@@ -50,7 +50,9 @@ function Clients() {
                                     <Link className="d-grid gap-2" to={`/clients/${client.id}/edit`}>
                                         <Button variant="primary" size="sm" >EDIT</Button>
                                     </Link>
-                                    <Button id={client.id} className="d-grid gap-2" variant="danger" size="sm" onClick={deleteClients}>DELETE</Button>
+                                    <Link className="d-grid gap-2">
+                                        <Button id={client.id} className="gap-2" variant="danger" size="sm" onClick={deleteClients}>DELETE</Button>
+                                    </Link>                               
                                 </div>
                             </div>
                         </Card.Body>
@@ -61,13 +63,9 @@ function Clients() {
     };
 
     return (
-        <div>
-
-            <div className="body-client">
-                <br />
-                <ul>{renderClients()}</ul>
-            </div>
-        </div>
+        <div className="body-app">            
+            <ul>{renderClients()}</ul>
+        </div>        
     );
 }
 

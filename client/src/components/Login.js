@@ -61,6 +61,7 @@ function Login({ setCurrentUser }) {
               onChange={(event) => setPassword(event.target.value)}
             />
             <br />
+            <Button class="btn btn-primary" to="/appointments">Back</Button> 
             <Button variant="success" type="submit">Login</Button>{' '}
             <br />
             <Link className="d-grid gap-2" to="/signup">
