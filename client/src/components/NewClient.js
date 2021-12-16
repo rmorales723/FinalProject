@@ -78,7 +78,7 @@ function NewClient() {
                             type="text"
                             id="img_url"
                             name="img_url" />
-                        <Button variant="success" type="submit">Submit</Button>{' '}
+                        <Button type="submit">Submit</Button>{' '}
                     </form>
                     <div className="new-client-form-container-container"> </div>
                 </ div>

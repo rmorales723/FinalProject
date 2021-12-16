@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 
 function Clients() {
     const [clients, setClients] = useState([])
+
+    const history = useHistory()
 
     useEffect(() => {
         fetch("/clients")
@@ -11,7 +13,7 @@ function Clients() {
             .then((clients) => setClients(clients))
     }, [])
 
-    const deleteClients = (event) => {
+    const deleteClient = (event) => {
         fetch(`/clients/${event.target.id}`, {
             method: "DELETE",
             headers: {
@@ -21,7 +23,8 @@ function Clients() {
             const filterClients = clients.filter(client => {
                 return client.id != event.target.id;
             })
-            return setClients(filterClients)
+            setClients(filterClients);
+            // history.push('/clients');
         });
     }
 
@@ -50,9 +53,7 @@ function Clients() {
                                     <Link className="d-grid gap-2" to={`/clients/${client.id}/edit`}>
                                         <Button variant="primary" size="sm" >EDIT</Button>
                                     </Link>
-                                    <Link className="d-grid gap-2">
-                                        <Button id={client.id} className="gap-2" variant="danger" size="sm" onClick={deleteClients}>DELETE</Button>
-                                    </Link>                               
+                                    <Button id={client.id} className="gap-2" variant="danger" size="sm" onClick={deleteClient}>DELETE</Button>
                                 </div>
                             </div>
                         </Card.Body>

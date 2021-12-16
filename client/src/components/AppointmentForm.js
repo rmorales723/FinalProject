@@ -2,34 +2,22 @@ import React,{useState} from 'react'
 import { useHistory, useParams } from 'react-router';
 import { Button } from "react-bootstrap";
 import { Alert } from 'react-bootstrap'
-import Calendar from 'react-calendar'
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
-function AppointmentForm() {
+function AppointmentForm(currentUser) {
     const [appointments, setAppointments] = useState([])
     const history = useHistory()
     const [client_name, setClient_Name] = useState('')
-    const [date, setDate] = useState('')
+    const [date, setDate] = useState(new Date())
     const [time, setTime] = useState('')
     const [errors, setErrors] = useState("")
 
-    const addAppointment = () => {
-      return {
-          method: 'POST',
-          headers: {
-              'Content-type': 'application/json'
-              
-          },
-          body: JSON.stringify({
-              client_name: client_name,
-              date: date,
-              time: time,
-          })
-      }
-  }
-
   const handleOnSubmit = (event) => {
     event.preventDefault()
-    fetch('/appointments', addAppointment(), {
+    console.log(`creating appointment..`)
+    console.log(JSON.stringify(currentUser.currentUser))
+    fetch('/appointments', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -37,7 +25,8 @@ function AppointmentForm() {
         body: JSON.stringify({
             client_name: client_name,
             date: date,
-            time: time
+            time: time,
+            trainer_id: currentUser.currentUser
         }),
     })
         .then((response) => {
@@ -64,7 +53,7 @@ return (
     <div className="body-app">
         <div className="form-outsider">
             <div className="form-container">
-                <form className="register-form" onSubmit={handleOnSubmit}>
+                <form className="register-form">
                     {errors ?
                         <Alert variant="danger">{errors && displayError()}</Alert> : <Alert variant="danger="></Alert>
                     }
@@ -77,14 +66,11 @@ return (
                         type="text"
                         id="client_name"
                         name="client_name" />
-                    <input
-                        onChange={(event) => setDate(event.target.value)}
-                        value={date}
-                        className="form-field"
-                        placeholder="Date"
-                        type="text"
-                        id="date"
-                        name="date" />
+
+                        <Calendar
+                            onChange={setDate}
+                            value={new Date(date)}
+                        />
                     <input
                         onChange={(event) => setTime(event.target.value)}
                         value={time}
@@ -93,7 +79,7 @@ return (
                         type="text"
                         id="time"
                         name="time" /> 
-                    <Button variant="success" type="submit">Submit</Button>{' '}                    
+                    <Button onClick={handleOnSubmit} type="submit">Submit</Button>{' '}                
                 </form>
                 <div className="new-appointment-form-container-container"> </div>
             </ div>

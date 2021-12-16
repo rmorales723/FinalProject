@@ -96,7 +96,7 @@ function Signup({ setCurrentUser }) {
                 onChange={(event) => setCredential(event.target.value)}
               />
               <br />
-              <Button variant="success" type="submit">Sign Up</Button>{' '}
+              <Button type="submit">Sign Up</Button>{' '}
               <p>- or -</p>
               <Link className="d-grid gap-2" to="/">
                 <Button variant="secondary">Login</Button>

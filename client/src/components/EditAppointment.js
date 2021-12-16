@@ -3,17 +3,20 @@ import { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import '../App.css';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 function EditAppointment() {
     const { id } = useParams()
     const history = useHistory()
     const [clientName, setClientName] = useState('')
-    const [date, setDate] = useState('')
+    const [date, setDate] = useState(new Date())
     const [time, setTime] = useState('')
 
     useEffect(() => {
         fetchAppointment();
     }, [])
+
     function fetchAppointment() {
         fetch(`/appointments/${id}`)
             .then(res => res.json())
@@ -61,14 +64,10 @@ function EditAppointment() {
                     type ="text"
                     id="client_name"
                     name="client_name"/>
-                    <input
-                    onChange={(event) => setDate(event.target.value)}
-                    value={date}
-                    className="form-field"
-                    placeholder="Date"
-                    type ="text"
-                    id="Date"
-                    name="Date"/>
+                    <Calendar
+                        onChange={setDate}
+                        value={new Date(date)}
+                    />
                     <input
                     onChange={(event) => setTime(event.target.value)}
                     value={time}
@@ -81,7 +80,7 @@ function EditAppointment() {
                     <Button onClick={handleOnSubmit} class="btn btn-primary" to="/appointments">Back</Button>     
                     <br />
                     <br />
-                    <Button onClick={handleOnSubmit} variant="success" type="submit">Submit</Button>{' '}
+                    <Button onClick={handleOnSubmit} variant="danger" type="submit">Submit</Button>{' '}
                 <div className="new-member-form-container-container"> </div>
             </form>
             </div>
