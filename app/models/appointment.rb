@@ -1,6 +1,10 @@
 class Appointment < ApplicationRecord
-    belongs_to :trainer, optional: true
-    belongs_to :client, optional: true
+    belongs_to :trainer
+    belongs_to :client
 
-    validates :date, :time, :client_name, presence: true
+    validates :date, :time, presence: true
+
+    def client_name 
+        client.name
+    end
 end

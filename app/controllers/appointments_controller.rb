@@ -3,8 +3,8 @@ class AppointmentsController < ApplicationController
      skip_before_action :authorized
 
     def index 
-        appointment = Appointment.order(updated_at: :desc)
-        render json: appointment, status: :ok
+        appointments = Appointment.order(updated_at: :desc)
+        render json: appointments, status: :ok
     end
 
     def show

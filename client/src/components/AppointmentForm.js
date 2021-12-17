@@ -4,11 +4,12 @@ import { Button } from "react-bootstrap";
 import { Alert } from 'react-bootstrap'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import ClientsDropdown from './ClientsDropdown';
 
 function AppointmentForm(currentUser) {
     const [appointments, setAppointments] = useState([])
     const history = useHistory()
-    const [client_name, setClient_Name] = useState('')
+    const [clientId, setClientId] = useState('')
     const [date, setDate] = useState(new Date())
     const [time, setTime] = useState('')
     const [errors, setErrors] = useState("")
@@ -22,11 +23,11 @@ function AppointmentForm(currentUser) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-            client_name: client_name,
+        body: JSON.stringify({            
             date: date,
             time: time,
-            trainer_id: currentUser.currentUser
+            trainer_id: currentUser.currentUser,
+            client_id: clientId,
         }),
     })
         .then((response) => {
@@ -58,19 +59,13 @@ return (
                         <Alert variant="danger">{errors && displayError()}</Alert> : <Alert variant="danger="></Alert>
                     }
                     <p>Add Appointment</p>
-                    <input
-                        onChange={(event) => setClient_Name(event.target.value)}
-                        value={client_name}
-                        className="form-field"
-                        placeholder="Client Name"
-                        type="text"
-                        id="client_name"
-                        name="client_name" />
 
-                        <Calendar
-                            onChange={setDate}
-                            value={new Date(date)}
-                        />
+                    <ClientsDropdown setClientId={setClientId} />
+                    
+                    <Calendar
+                        onChange={setDate}
+                        value={new Date(date)}
+                    />
                     <input
                         onChange={(event) => setTime(event.target.value)}
                         value={time}

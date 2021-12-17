@@ -5,17 +5,21 @@ import { Link } from "react-router-dom";
 import '../App.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import ClientsDropdown from './ClientsDropdown';
 
-function EditAppointment() {
+function EditAppointment({currentUser}) {
     const { id } = useParams()
     const history = useHistory()
     const [clientName, setClientName] = useState('')
+    const [clientId, setClientId] = useState('')
     const [date, setDate] = useState(new Date())
     const [time, setTime] = useState('')
 
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         fetchAppointment();
-    }, [])
+    }, [loading])
 
     function fetchAppointment() {
         fetch(`/appointments/${id}`)
@@ -24,7 +28,14 @@ function EditAppointment() {
                 setClientName(appointment.client_name);
                 setDate(appointment.date);
                 setTime(appointment.time);
+                setLoading(false);
             })
+    }
+
+    if (loading) {
+        return (
+            <div> Loading!!! </div>
+        );
     }
 
     const handleOnSubmit = (event) => {
@@ -35,8 +46,9 @@ function EditAppointment() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                client_name: clientName,
+            body: JSON.stringify({                
+                trainer_id: currentUser.currentUser,
+                client_id: clientId,
                 date: date,
                 time: time
             }),
@@ -56,14 +68,9 @@ function EditAppointment() {
                 <div className="form-container">
                     <form onSubmit={handleOnSubmit}>
                     <p>EDIT APPOINTMENT</p>
-                    <input
-                    onChange={(event) => setClientName(event.target.value)}
-                    value={clientName}
-                    className="form-field"
-                    placeholder="Client_name"
-                    type ="text"
-                    id="client_name"
-                    name="client_name"/>
+                    
+                    <ClientsDropdown setClientId={setClientId} clientName={clientName} />
+                    
                     <Calendar
                         onChange={setDate}
                         value={new Date(date)}
