@@ -32,6 +32,7 @@ function EditAppointment({currentUser}) {
             })
     }
 
+
     if (loading) {
         return (
             <div> Loading!!! </div>

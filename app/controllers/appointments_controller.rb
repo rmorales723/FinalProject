@@ -8,9 +8,9 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-    #     appointment = Appointment.find_by(id: params[:id])
-    #     render json: appointment, status: :ok
-        render json: @appointment, status: :ok
+        appointment = Appointment.find_by(id: params[:id])
+        render json: appointment, status: :ok
+        # render json: @appointment, status: :ok
     end
 
     def create
@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     end
 
     def update
-        @appointment.update!(appointment_params)
+        @appointment.update(appointment_params)
         render json: @appointment, status: :accepted
     end
 
