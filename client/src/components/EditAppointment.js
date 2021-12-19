@@ -28,6 +28,7 @@ function EditAppointment({currentUser}) {
                 setClientName(appointment.client_name);
                 setDate(appointment.date);
                 setTime(appointment.time);
+                setClientId(appointment.client_id);
                 setLoading(false);
             })
     }
