@@ -6,7 +6,7 @@ function ClientsDropdown({setClientId, clientName}) {
     const [clients, setClients] = useState([]) 
     const [selectedClient, setSelectedClient] = useState(clientName);
     
-    console.log(`clientName: ${clientName}`);
+    // console.log(`clientName: ${clientName}`);
 
     useEffect(() => {
         fetch("/clients")

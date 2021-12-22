@@ -16,7 +16,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
     const history = useHistory()
     const handleLogout = () => {
         setCurrentUser(null);
-        localStorage.setItem("currentUserId", null);
+        localStorage.removeItem("currentUserId");
         history.push('/');
     //   fetch(`/logout`, {
     //     method: 'DELETE'

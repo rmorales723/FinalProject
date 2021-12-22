@@ -42,7 +42,6 @@ function EditAppointment({currentUser}) {
 
     const handleOnSubmit = (event) => {
         event.preventDefault()
-        // console.log('UPDATING !!!');
         fetch(`/appointments/${id}`, {
             method: 'PATCH',
             headers: {
