@@ -1,3 +1,3 @@
 class ClientSerializer < ActiveModel::Serializer
-  attributes :id, :name, :number, :img_url
+  attributes :id, :name, :email, :number, :img_url
 end

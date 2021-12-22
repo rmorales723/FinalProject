@@ -47,6 +47,7 @@ function Clients() {
                         <Card.Body>
                             <Card.Title>{client.name}</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">{client.number}</Card.Subtitle>
+                            <Card.Subtitle className="mb-2 text-muted">{client.email}</Card.Subtitle>
                             {/* <Card.Text>{client.goals}</Card.Text> */}
                             <div className="button-organizer">
                                 <div className="d-grid gap-2">

@@ -9,6 +9,7 @@ function NewClient() {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
     const [img_url, setImg] = useState('')
+    const [email, setEmail] = useState('')
     const [errors, setErrors] = useState("")
     const history = useHistory()
 
@@ -22,7 +23,8 @@ function NewClient() {
             body: JSON.stringify({
                 name: name,
                 number: number,
-                img_url: img_url
+                img_url: img_url,
+                email: email
             }),
         })
             .then((response) => {
@@ -70,6 +72,14 @@ function NewClient() {
                             type="text"
                             id="number"
                             name="number" />
+                        <input
+                            onChange={(event) => setEmail(event.target.value)}
+                            value={email}
+                            className="form-field"
+                            placeholder="Email"
+                            type="text"
+                            id="email"
+                            name="email" />                            
                         <input
                             onChange={(event) => setImg(event.target.value)}
                             value={img_url}

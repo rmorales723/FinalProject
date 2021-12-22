@@ -3,8 +3,8 @@ class ClientsController < ApplicationController
     skip_before_action :authorized
     
     def index 
-        client = Client.all
-        render json: client, status: :ok
+        @clients = Client.all
+        render json: @clients, status: :ok
     end
 
     def show
@@ -34,7 +34,7 @@ class ClientsController < ApplicationController
     private
 
     def client_params
-        params.require(:client).permit(:name, :number, :img_url)
+        params.require(:client).permit(:name, :number, :img_url, :email)
     end
 
     def set_client
