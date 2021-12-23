@@ -46,7 +46,9 @@ function Signup({ setCurrentUser }) {
   }
 
   return (
-    <div className="body-app">
+    <div style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/images/gym-background.jpeg'})`,
+    }} className="body-app">
       <div className="form-outsider">
         <div className="form-container">
           <div className="authForm">

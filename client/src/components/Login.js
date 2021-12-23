@@ -34,9 +34,10 @@ function Login({ setCurrentUser }) {
     });
   };
 
-
   return (
-    <div className="body-app">
+    <div style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/images/gym-background.jpeg'})`,
+    }} className="body-app">
       <div className="form-log">
         <div className="form-container">
           <h3>Login</h3>
@@ -61,7 +62,6 @@ function Login({ setCurrentUser }) {
               onChange={(event) => setPassword(event.target.value)}
             />
             <br />
-            {/* <Button class="btn btn-primary" to="/">Back</Button>  */}
             <Button variant="primary" type="submit">Login</Button>{' '}
             <br />
             <Link className="d-grid gap-2" to="/signup">
