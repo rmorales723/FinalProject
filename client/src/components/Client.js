@@ -10,6 +10,8 @@ import StarRating from './StarRating';
 
 const Client = ({ id, name, number, email, rating, img_url, clients, setClients }) => {
 
+const [currentRating, setCurrentRating] = useState(rating);
+
 const deleteClient = (event) => {
     fetch(`/clients/${event.target.id}`, {
         method: "DELETE",
@@ -47,7 +49,7 @@ const editAppointment = (event) => {
                 <Card.Title>{name}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{number}</Card.Subtitle>
                 <Card.Subtitle className="mb-2 text-muted">{email}</Card.Subtitle>
-                <Card.Text><StarRating totalStars={5} currentRating={rating} displayStar={true} /></Card.Text>
+                <Card.Text><StarRating totalStars={5} currentRating={rating} displayStar={true} clientId={id} setCurrentRating={setCurrentRating} /></Card.Text>
                 <div className="button-organizer">
                     <div className="d-grid gap-2">
                         <Link className="d-grid gap-2" to={`/clients/${id}/edit`}>

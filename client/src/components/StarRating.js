@@ -1,35 +1,43 @@
 import React, { useState } from "react";
-// import { render } from "react-dom";
+// import "../css/App.css";
 
-const Star = ({ selected = false, onClick = f => f }) => (
+const Star = ({ selected = false, onClick = (f) => f }) => (
   <div className={selected ? "star selected" : "star"} onClick={onClick} />
 );
 
-const DisplayStar = ({ selected = false }) => (
-    <div className={selected ? "star selected" : "star"} />
-);
-
-const StarRating = ({ totalStars, currentRating, setRating, displayStar }) => {
+const StarRating = ({
+  totalStars,
+  currentRating,
+  setCurrentRating,
+  clientId,
+}) => {
   const [starsSelected, selectStar] = useState(currentRating);
 
-  console.log(`starsSelected: ${starsSelected}`);
+  function updateClientRating(selectedRating) {
+    const data =  { client: { rating: selectedRating } };
 
-  function updateRating(selectedRating) {
-    selectStar(selectedRating);
-    setRating(selectedRating);
+    fetch(`http://localhost:4000/clients/${clientId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((client) => {
+        selectStar(client.rating);
+        setCurrentRating(client.rating);
+      });
   }
 
   return (
-    <div className="star-rating">
+    <div className='star-rating'>
       {[...Array(totalStars)].map((n, i) => (
-          displayStar ? (<DisplayStar
+        <Star
           key={i}
           selected={i < starsSelected}
-        />) : (<Star
-            key={i}
-            selected={i < starsSelected}
-            onClick={() => updateRating(i + 1)}
-        />)
+          onClick={() => updateClientRating(i + 1)}
+        />
       ))}
       <p>
         {starsSelected} of {totalStars} stars

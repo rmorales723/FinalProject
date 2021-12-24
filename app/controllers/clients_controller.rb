@@ -19,7 +19,7 @@ class ClientsController < ApplicationController
 
     def update
         @client = Client.find(params[:id])
-        if @client.update(client_params)
+        if @client.update!(client_params)
             render json: @client, status: :accepted
         else
             render json: @client.errors.messages.join(", "), status: 422
@@ -34,7 +34,7 @@ class ClientsController < ApplicationController
     private
 
     def client_params
-        params.require(:client).permit(:name, :number, :img_url, :email)
+        params.require(:client).permit(:name, :number, :img_url, :email, :rating)
     end
 
     def set_client
