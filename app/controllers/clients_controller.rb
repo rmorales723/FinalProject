@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
     skip_before_action :authorized
     
     def index 
-        @clients = Client.all
+        @clients = Client.order(updated_at: :desc)
         render json: @clients, status: :ok
     end
 

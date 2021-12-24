@@ -48,6 +48,7 @@ function Signup({ setCurrentUser }) {
   return (
     <div style={{
       backgroundImage: `url(${process.env.PUBLIC_URL + '/images/gym-background.jpeg'})`,
+      backgroundRepeat: 'no-repeat', backgroundSize: `cover`
     }} className="body-app">
       <div className="form-outsider">
         <div className="form-container">
@@ -101,7 +102,7 @@ function Signup({ setCurrentUser }) {
               <Button type="submit">Sign Up</Button>{' '}
               <p>- or -</p>
               <Link className="d-grid gap-2" to="/">
-                <Button variant="secondary">Login</Button>
+                <Button variant="primary">Login</Button>
               </Link>
             </form>
           </div>

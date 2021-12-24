@@ -34,7 +34,7 @@ function EditClient() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({                
+            body: JSON.stringify({
                 name: name,
                 number: number,
                 img_url: img_url,
@@ -51,12 +51,15 @@ function EditClient() {
     }
 
     return (
-        <div className="body-app-edit">
-            
+        <div style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/images/membership.jpeg'})`,
+             backgroundSize: `cover`
+          }} className="body-app-edit">
+
             <div className="form-outsider">
                 <div className="form-container">
                     <form className="register-form">
-                        <p>Edit Client</p>                        
+                        <p>Edit Client</p>
                         <input
                             onChange={(event) => setName(event.target.value)}
                             value={name}
@@ -80,7 +83,7 @@ function EditClient() {
                             placeholder="Email"
                             type="text"
                             id="email"
-                            name="email" />                            
+                            name="email" />
                         <input
                             onChange={(event) => setImg(event.target.value)}
                             value={img_url}
@@ -89,7 +92,7 @@ function EditClient() {
                             type="text"
                             id="img_url"
                             name="img_url" />
-                        <Button onClick={handleOnSubmit} variant="success" type="submit">Submit</Button>{' '}                        
+                        <Button onClick={handleOnSubmit} variant="primary" type="submit">Submit</Button>{' '}
                     </form>
                     <div className="new-member-form-container-container"> </div>
                 </ div>

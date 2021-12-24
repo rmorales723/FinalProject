@@ -37,8 +37,8 @@ function Clients() {
         }
       }
 
-    
-    const renderClients = () => {        
+
+    const renderClients = () => {
         return clients.map((client) => {
             return (
                 <div className="card-box">
@@ -65,9 +65,12 @@ function Clients() {
     };
 
     return (
-        <div className="body-app">            
+        <div style={{
+            backgroundImage:  `url(${process.env.PUBLIC_URL + '/images/gym-appointment.jpeg'})`,
+            backgroundRepeat: 'no-repeat', backgroundSize: `cover`,
+          }} className="body-app">
             <ul>{renderClients()}</ul>
-        </div>        
+        </div>
     );
 }
 

@@ -51,7 +51,10 @@ const displayError = () => {
 }
 
 return (
-    <div className="body-app">
+    <div style={{
+        backgroundImage:  `url(${process.env.PUBLIC_URL + '/images/gym-appointment.jpeg'})`,
+        backgroundRepeat: 'no-repeat', backgroundSize: `cover`,
+      }} className="body-app">
         <div className="form-outsider">
             <div className="form-container">
                 <form className="register-form">

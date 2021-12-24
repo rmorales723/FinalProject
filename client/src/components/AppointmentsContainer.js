@@ -27,7 +27,10 @@ function AppointmentsContainer() {
         }
 
     return(
-        <div className="body-app">
+        <div style={{
+            backgroundImage:  `url(${process.env.PUBLIC_URL + '/images/gym-appointment.jpeg'})`,
+            backgroundRepeat: 'no-repeat', backgroundSize: `cover`,
+          }} className="body-app">
             <Card className="card-size">                
                 <Card.Body>
                     <Card.Title>ALL APPOINTMENTS</Card.Title>

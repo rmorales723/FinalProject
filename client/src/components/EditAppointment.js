@@ -64,7 +64,10 @@ function EditAppointment({currentUser}) {
     }
 
     return (
-        <div className="body-app-edit">
+        <div style={{
+            backgroundImage:  `url(${process.env.PUBLIC_URL + '/images/gym-appointment.jpeg'})`,
+            backgroundRepeat: 'no-repeat', backgroundSize: `cover`,
+          }} className="body-app-edit">
             <div className="form-outsider">
                 <div className="form-container">
                     <form onSubmit={handleOnSubmit}>

@@ -29,7 +29,8 @@ function Appointments() {
     const renderAppointments = () => {
         return appointments.map((appointment) => {
             return (
-                <div className="card-box">
+                <div
+                  className="card-box">
                     <Card className="card-size" style={{ width: '18rem' }}>
                         <Card.Body>
                             <Card.Title>{appointment.client_name}</Card.Title>
