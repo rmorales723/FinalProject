@@ -11,6 +11,7 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
-    "react-calendar": "^3.5.0"
+    "react-calendar": "^3.5.0",
+    "react-time-picker": "^4.4.4"
   }
 }

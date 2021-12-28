@@ -5,6 +5,9 @@ import { Alert } from 'react-bootstrap'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import ClientsDropdown from './ClientsDropdown';
+import TimePicker from 'react-time-picker';
+import 'react-time-picker/dist/TimePicker.css';
+import 'react-clock/dist/Clock.css';
 
 function AppointmentForm(currentUser) {
     const [appointments, setAppointments] = useState([])
@@ -68,15 +71,19 @@ return (
                     <Calendar
                         onChange={setDate}
                         value={new Date(date)}
-                    />
-                    <input
+                      />
+                      <TimePicker
+                        onChange={setTime}
+                        value={time}
+                      />
+                    {/* <input
                         onChange={(event) => setTime(event.target.value)}
                         value={time}
                         className="form-field"
                         placeholder="Time"
                         type="text"
                         id="time"
-                        name="time" /> 
+                        name="time" />  */}
                     <Button onClick={handleOnSubmit} type="submit">Submit</Button>{' '}                
                 </form>
                 <div className="new-appointment-form-container-container"> </div>

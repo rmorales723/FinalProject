@@ -66,14 +66,18 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.image-url-size {
-  width:  100%;
+.card-img-top {
+  max-height: 35vh; /*not want to take all vertical space*/
+  width: 40vw;
+  object-fit: contain;/*show all image, autosized, no cut, in available space*/
+}
+/* .image-url-size {
+  width:  '100';
   height: '100';
   margin-bottom: 1px;
   object-fit: cover;
   
-}
+} */
 
 .button-organizer{
   align-items: baseline;
@@ -147,7 +151,6 @@ body {
 .star.selected {
   background-color: red;
 }
-
 .star {
   cursor: pointer;
   width: 2em;

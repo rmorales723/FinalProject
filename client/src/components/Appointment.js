@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import '../App.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import TimePicker from 'react-time-picker';
+import 'react-time-picker/dist/TimePicker.css';
+import 'react-clock/dist/Clock.css';
 
 const Appointment = ({ id, client_name, date, time, appointments, setAppointments }) => {
 
@@ -30,19 +33,22 @@ const editAppointment = (event) => {
 }
     return(
         <div className="card-box">
-            <Card className="card-size" style={{ width: '18rem' }}>                
+            <Card className="card-size" alt="Card image cap" class="card-img-top img-fluid" style={{ width: '18rem' }}>                
                 <Card.Body>
                     <Card.Title>{client_name}</Card.Title>                    
-                    <Card.Text>Time: {time}</Card.Text>
+                    {/* <Card.Text>Time: {time}</Card.Text> */}
 
                     <Calendar value={new Date(date)} />
                     <br />
-
+                    <TimePicker
+                        value={time}
+                      />
+                    <br />
+                    <br />
                     <Card.Text>
                         <Button id={id} variant="primary" size="sm" onClick={editAppointment}>EDIT</Button>
                     </Card.Text>
-
-                    <Card.Text>
+                     <Card.Text>
                         <Button id={id} variant="danger" size="sm" onClick={deleteAppointment}>DELETE</Button>
                     </Card.Text>                                    
                 </Card.Body>
