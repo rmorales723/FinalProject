@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Alert } from "react-bootstrap"
 import { useHistory, Link } from "react-router-dom";
 import { Button } from 'react-bootstrap'
-import "../App.css";
 
 function Login({ setCurrentUser }) {
   const [username, setUsername] = useState("");

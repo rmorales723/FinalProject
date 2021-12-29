@@ -5,9 +5,8 @@ import UnAuthenticatedApp from './components/UnAuthenticatedApp'
 import AppointmentForm from './components/AppointmentForm'
 import AppointmentsContainer from './components/AppointmentsContainer'
 
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

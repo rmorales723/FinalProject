@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import Client from './Client';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Clients() {
     const [clients, setClients] = useState([])
