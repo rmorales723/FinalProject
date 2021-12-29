@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 import '../App.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/TimePicker.css';
-import 'react-clock/dist/Clock.css';
+import TimeSelectDropdown from './TimeSelectDropdown';
 
 const Appointment = ({ id, client_name, date, time, appointments, setAppointments }) => {
 
@@ -40,11 +38,9 @@ const editAppointment = (event) => {
 
                     <Calendar value={new Date(date)} />
                     <br />
-                    <TimePicker
-                        value={time}
-                      />
-                    <br />
-                    <br />
+                    <Card.Text>
+                        <TimeSelectDropdown time={time} hideOptions={true} />
+                    </Card.Text>                    
                     <Card.Text>
                         <Button id={id} variant="primary" size="sm" onClick={editAppointment}>EDIT</Button>
                     </Card.Text>

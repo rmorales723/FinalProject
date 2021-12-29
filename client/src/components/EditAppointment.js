@@ -6,9 +6,7 @@ import '../App.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import ClientsDropdown from './ClientsDropdown';
-import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/TimePicker.css';
-import 'react-clock/dist/Clock.css';
+import TimeSelectDropdown from './TimeSelectDropdown';
 
 function EditAppointment({currentUser}) {
     const { id } = useParams()
@@ -77,26 +75,14 @@ function EditAppointment({currentUser}) {
                     <p>EDIT APPOINTMENT</p>
                     
                     <ClientsDropdown setClientId={setClientId} clientName={clientName} />
-                    
+                    <br />
                     <Calendar
                         onChange={setDate}
                         value={new Date(date)}
                     />
                     <br />
-                    <TimePicker
-                        onChange={setTime}
-                        value={time}
-                      />
-                    <br />
-                    {/* <input
-                    onChange={(event) => setTime(event.target.value)}
-                    value={time}
-                    className="form-field"
-                    placeholder="Time"
-                    type ="text"
-                    id="Time"
-                    name="Time" /> */}
-                    <br />
+                    <TimeSelectDropdown time={time} setTime={setTime} />
+                    <br />                    
                     <Button onClick={handleOnSubmit} class="btn btn-primary" to="/appointments">Back</Button>     
                     <br />
                     <br />

@@ -1,13 +1,11 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { useHistory, useParams } from 'react-router';
 import { Button } from "react-bootstrap";
 import { Alert } from 'react-bootstrap'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import ClientsDropdown from './ClientsDropdown';
-import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/TimePicker.css';
-import 'react-clock/dist/Clock.css';
+import TimeSelectDropdown from './TimeSelectDropdown';
 
 function AppointmentForm(currentUser) {
     const [appointments, setAppointments] = useState([])
@@ -45,7 +43,6 @@ function AppointmentForm(currentUser) {
             }
         })
 }
-            
 
 const displayError = () => {
     return errors.map(error => {
@@ -67,23 +64,16 @@ return (
                     <p>Add Appointment</p>
 
                     <ClientsDropdown setClientId={setClientId} />
+
+                    <br />
                     
                     <Calendar
                         onChange={setDate}
                         value={new Date(date)}
                       />
-                      <TimePicker
-                        onChange={setTime}
-                        value={time}
-                      />
-                    {/* <input
-                        onChange={(event) => setTime(event.target.value)}
-                        value={time}
-                        className="form-field"
-                        placeholder="Time"
-                        type="text"
-                        id="time"
-                        name="time" />  */}
+                      <br />
+                    <TimeSelectDropdown time={time} setTime={setTime} />
+                      <br />
                     <Button onClick={handleOnSubmit} type="submit">Submit</Button>{' '}                
                 </form>
                 <div className="new-appointment-form-container-container"> </div>

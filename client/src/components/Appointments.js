@@ -9,7 +9,7 @@ function Appointments() {
     useEffect(() => {
         fetch("/appointments")
             .then((res) => res.json())
-            .then((appointments) => setClaims(appointments))
+            .then((appointments) => setAppointments(appointments))
     }, [])
 
     const deleteAppointments = (event) => {
