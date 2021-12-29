@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import '../App.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import StarRating from './StarRating';
 
 const Client = ({ id, name, number, email, rating, img_url, clients, setClients }) => {

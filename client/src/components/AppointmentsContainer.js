@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import Appointment from './Appointment';
 import { Button, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AppointmentsContainer() {
     const [appointments, setAppointments] = useState([])
