@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router';
 import { Link } from "react-router-dom";
 // import '../App.css';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+// import 'react-calendar/dist/Calendar.css';
 import ClientsDropdown from './ClientsDropdown';
 import TimeSelectDropdown from './TimeSelectDropdown';
 

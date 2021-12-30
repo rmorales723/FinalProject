@@ -5,7 +5,7 @@ import EditAppointment from './EditAppointment';
 import { Link } from "react-router-dom";
 // import '../App.css';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+// import 'react-calendar/dist/Calendar.css';
 import TimeSelectDropdown from './TimeSelectDropdown';
 
 const Appointment = ({ id, client_name, date, time, appointments, setAppointments }) => {
