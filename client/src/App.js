@@ -8,7 +8,6 @@ import AppointmentsContainer from './components/AppointmentsContainer'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   // const [authChecked, setAuthChecked] = useState(false)

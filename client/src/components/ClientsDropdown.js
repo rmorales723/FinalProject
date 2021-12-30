@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DropdownButton, Dropdown} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ClientsDropdown({setClientId, clientName}) {
     const [clients, setClients] = useState([]) 

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap'
 import { useState } from 'react';
 import { useHistory } from 'react-router';
-import '../App.css';
+// import '../App.css';
 
 function NewClient() {
     const [name, setName] = useState('')

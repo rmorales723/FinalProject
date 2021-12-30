@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react';
 import { useHistory, useParams } from 'react-router';
 import EditAppointment from './EditAppointment';
 import { Link } from "react-router-dom";
-import '../App.css';
+// import '../App.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import TimeSelectDropdown from './TimeSelectDropdown';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DropdownButton, Dropdown, Button} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TimeSelectDropdown({time, setTime, hideOptions}) {    
     const [selectedTime, setSelectedTime] = useState(time);
