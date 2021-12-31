@@ -6,7 +6,7 @@ import AppointmentForm from './components/AppointmentForm'
 import AppointmentsContainer from './components/AppointmentsContainer'
 
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-calendar/dist/Calendar.css';
 
 function App() {
