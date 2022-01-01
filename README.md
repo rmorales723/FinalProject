@@ -207,5 +207,9 @@ We have EDIT and DELETE buttons that give the signed in user the ability to edit
 
 TODO:
 
+![edit-client-page](https://user-images.githubusercontent.com/72527380/147842982-d543b5f1-7acd-4718-9a2e-f3e5ea79bef8.png)
+
+
+
 ## Trainer, Client, Appointment
 
