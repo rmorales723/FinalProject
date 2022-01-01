@@ -193,10 +193,15 @@ This project creates appointments for clients that personal training with a spec
 
 # Clients page
 
-TODO: Clients page description....
+The react front end of the project has a clients page and here is a screenshot of the clients page:
 
 ![clients-page](https://user-images.githubusercontent.com/72527380/147842837-105e1ad7-fd4e-473c-a6aa-8ec7b0ece671.png)
 
+We have a Clients react component that makes a fetch API call to the Rails backend API to fetch all the clients data that are present in the database, and then displays each client in the UI. We have a Client react component to render each client data in the UI.
+
+We have a StarRating component to show the rating for each client. The logged in user (Trainer) can click on a specific star to update the rating for that particular client. It makes a fetch API call (PUT type) and updates the rating of the corresponding client in the database and displays the updated rating star in the UI.
+
+We have EDIT and DELETE buttons that give the signed in user the ability to edit a client information and delete the client.
 
 ## Trainer, Client, Appointment
 
