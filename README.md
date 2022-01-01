@@ -226,7 +226,8 @@ We have `EditClient` react component that fetches the current data for the clien
 
 The react front end of the project has an add appointment page and here is a screenshot of the add appointments page:
 
-ToDo
+![Add-Appointment](https://user-images.githubusercontent.com/72527380/147858776-6b2b2a17-471a-4e53-963a-6a2c768b0730.png)
+
  
 
 
