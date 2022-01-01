@@ -222,6 +222,13 @@ We have `EditClient` react component that fetches the current data for the clien
 
  We have EDIT and DELETE buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
 
+ # Add Appointment page
+
+The react front end of the project has an add appointment page and here is a screenshot of the add appointments page:
+
+ToDo
+ 
+
 
 ## Trainer, Client, Appointment
 
