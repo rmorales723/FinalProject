@@ -195,5 +195,8 @@ This project creates appointments for clients that personal training with a spec
 
 TODO: Clients page description....
 
+![clients-page](https://user-images.githubusercontent.com/72527380/147842837-105e1ad7-fd4e-473c-a6aa-8ec7b0ece671.png)
+
+
 ## Trainer, Client, Appointment
 
