@@ -4,7 +4,7 @@ import { DropdownButton, Dropdown, Button} from 'react-bootstrap';
 
 function TimeSelectDropdown({time, setTime, hideOptions}) {    
     const [selectedTime, setSelectedTime] = useState(time);
-    const timeOptions = ['12:00am', '12:15am', '12:30am', '1:00am'];
+    const timeOptions = ['8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm'];
 
     const handleOnSelect = (event) => {
         console.log(`inside handleOnSelect: ${event.target.value}`);
