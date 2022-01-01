@@ -214,11 +214,14 @@ We have `EditClient` react component that fetches the current data for the clien
 
  # Appointments page
 
- The react front end of the project has a clients page and here is a screenshot of the clients page:
+ The react front end of the project has a appointments page and here is a screenshot of the appointments page:
 
- ToDo:
 
- We have a Appointments react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have a Appointment react component to render each appointment data in the UI.
+
+ We have a Appointments react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have a Appointment react component to render each appointment data in the UI. 
+
+ We have EDIT and DELETE buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
+
 
 ## Trainer, Client, Appointment
 
