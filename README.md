@@ -197,7 +197,7 @@ The react front end of the project has a clients page and here is a screenshot o
 
 ![clients-page](https://user-images.githubusercontent.com/72527380/147842837-105e1ad7-fd4e-473c-a6aa-8ec7b0ece671.png)
 
-We have a Clients react component that makes a fetch API call to the Rails backend API to fetch all the clients data that are present in the database, and then displays each client in the UI. We have a Client react component to render each client data in the UI.
+We have a `Clients` react component that makes a fetch API call to the Rails backend API to fetch all the clients data that are present in the database, and then displays each client in the UI. We have a Client react component to render each client data in the UI.
 
 We have a StarRating component to show the rating for each client. The logged in user (Trainer) can click on a specific star to update the rating for that particular client. It makes a fetch API call (PUT type) and updates the rating of the corresponding client in the database and displays the updated rating star in the UI.
 
@@ -218,7 +218,7 @@ We have `EditClient` react component that fetches the current data for the clien
 
  ![appointments-page](https://user-images.githubusercontent.com/72527380/147857886-baa21cd7-6a3e-4392-8970-30c48bf65407.png)
 
- We have a Appointments react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have a Appointment react component to render each appointment data in the UI. 
+ We have a `Appointments` react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have a Appointment react component to render each appointment data in the UI. 
 
  We have EDIT and DELETE buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
 
@@ -226,6 +226,9 @@ We have `EditClient` react component that fetches the current data for the clien
 
 The react front end of the project has an add appointment page and here is a screenshot of the add appointments page:
 
+![Add-Appointment](https://user-images.githubusercontent.com/72527380/147858776-6b2b2a17-471a-4e53-963a-6a2c768b0730.png)
+
+We have an `AppointmentForm` react component that posts the current data for the appointment being added from the frontend React API. And, then it lets the logged in user add the appointment information (e.g. name, date, and time). When the user hits the Submit button, it makes a Post (PUT type) API call to the backend Rails API and the client data is added to the backend database.
 
  
 
