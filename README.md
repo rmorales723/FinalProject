@@ -216,7 +216,7 @@ We have `EditClient` react component that fetches the current data for the clien
 
  The react front end of the project has a appointments page and here is a screenshot of the appointments page:
 
-
+ ![appointments-page](https://user-images.githubusercontent.com/72527380/147857886-baa21cd7-6a3e-4392-8970-30c48bf65407.png)
 
  We have a Appointments react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have a Appointment react component to render each appointment data in the UI. 
 
