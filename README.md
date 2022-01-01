@@ -205,11 +205,12 @@ We have EDIT and DELETE buttons that give the signed in user the ability to edit
 
 # Client EDIT page:
 
-TODO:
+The following screenshot shows the client edit page:
 
 ![edit-client-page](https://user-images.githubusercontent.com/72527380/147842982-d543b5f1-7acd-4718-9a2e-f3e5ea79bef8.png)
 
-
+We have `EditClient` react component that fetches the current data for the client being edited from the backend Rails API. And, then it lets the logged in user edit the client information (e.g. name, number, email, img_url). When the user hits the Submit button, it makes a fetch (PUT type)
+ API call to the backend Rails API and the client data is updated in the backend database.
 
 ## Trainer, Client, Appointment
 
