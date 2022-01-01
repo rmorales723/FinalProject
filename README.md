@@ -203,5 +203,9 @@ We have a StarRating component to show the rating for each client. The logged in
 
 We have EDIT and DELETE buttons that give the signed in user the ability to edit a client information and delete the client.
 
+# Client EDIT page:
+
+TODO:
+
 ## Trainer, Client, Appointment
 
