@@ -212,5 +212,13 @@ The following screenshot shows the client edit page:
 We have `EditClient` react component that fetches the current data for the client being edited from the backend Rails API. And, then it lets the logged in user edit the client information (e.g. name, number, email, img_url). When the user hits the Submit button, it makes a fetch (PUT type)
  API call to the backend Rails API and the client data is updated in the backend database.
 
+ # Appointments page
+
+ The react front end of the project has a clients page and here is a screenshot of the clients page:
+
+ ToDo:
+
+ We have a Appointments react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have a Appointment react component to render each appointment data in the UI.
+
 ## Trainer, Client, Appointment
 
