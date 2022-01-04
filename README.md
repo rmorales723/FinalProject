@@ -209,7 +209,7 @@ When the user clicks on the `DELETE` button, it makes a `DELETE` request to the 
 
 The react front end of the project has an add client page and here is a screenshot of the add client page:
 
-TODO: Screenshot attach
+![add-client-page](https://user-images.githubusercontent.com/72527380/148004483-9eb7d280-2bbd-416a-a8a1-441f72f5d554.png)
 
 We have a `NewClient` react component that posts the user typed data for the client being created from the frontend to the Rails backend API. It lets the logged in user add the client information (e.g. client name, number, email and img_url etc.).
 
