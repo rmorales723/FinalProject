@@ -3,9 +3,7 @@ import { useState, useEffect} from 'react';
 import { useHistory, useParams } from 'react-router';
 import EditAppointment from './EditAppointment';
 import { Link } from "react-router-dom";
-// import '../App.css';
 import Calendar from 'react-calendar';
-// import 'react-calendar/dist/Calendar.css';
 import StarRating from './StarRating';
 
 const Client = ({ id, name, number, email, rating, img_url, clients, setClients }) => {
@@ -23,7 +21,6 @@ const deleteClient = (event) => {
             return client.id != event.target.id;
         })
         setClients(filterClients);
-        // history.push('/clients');
     });
 }
 
@@ -38,9 +35,6 @@ const styles = {
 
 const history = useHistory();
 
-const editAppointment = (event) => {
-    history.push(`/appointments/${id}/edit`);
-}
     return(
         <div className="card-box">
         <Card className="card-size" style={{ width: '18rem' }}>

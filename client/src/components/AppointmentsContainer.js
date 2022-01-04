@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import Appointment from './Appointment';
 import { Button, Card } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AppointmentsContainer() {
     const [appointments, setAppointments] = useState([])
@@ -23,7 +22,6 @@ function AppointmentsContainer() {
 
 
     const appointmentsToRender = () => {
-        // const appointmentsArray = Array.from(appointments)
         return appointments.map((appointment) => <Appointment id={appointment.id} client_name = {appointment.client_name} date = {appointment.date} time = {appointment.time} appointments={appointments} setAppointments={setAppointments} /> )
         }
 

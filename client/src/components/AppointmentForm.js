@@ -3,7 +3,6 @@ import { useHistory, useParams } from 'react-router';
 import { Button } from "react-bootstrap";
 import { Alert } from 'react-bootstrap'
 import Calendar from 'react-calendar';
-// import 'react-calendar/dist/Calendar.css';
 import ClientsDropdown from './ClientsDropdown';
 import TimeSelectDropdown from './TimeSelectDropdown';
 

@@ -1,18 +1,8 @@
-// import React, {Component} from 'react';
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 
  
- 
-//  class Trainers extends React.Component{
-//              render_trainers = () => {
-//             fetch("/trainers")
-//             .then((r) => r.json(r))
-//             .then((clients) => setTrainers(clients))
-//         }
-// }
-
-function Trainers() {
+ function Trainers() {
     const [trainer, setTrainer] = useState([])
 
     useEffect(() => {

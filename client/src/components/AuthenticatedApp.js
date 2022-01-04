@@ -1,4 +1,3 @@
-// import './App.css';
 import NavigationBar from './NavigationBar'
 import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom'
 import Client from './Clients'
@@ -18,17 +17,8 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         setCurrentUser(null);
         localStorage.removeItem("currentUserId");
         history.push('/');
-    //   fetch(`/logout`, {
-    //     method: 'DELETE'
-    //   })
-    //     .then(res => {
-    //         if (res.ok) {
-    //           setCurrentUser(null)
-    //           localStorage.setItem("currentUserId", null);
-    //           history.push('/')
-    //         }
-    //       })
       }
+    
     return (
         <div className="App">
       <nav>

@@ -3,9 +3,7 @@ import { useState, useEffect} from 'react';
 import { useHistory, useParams } from 'react-router';
 import EditAppointment from './EditAppointment';
 import { Link } from "react-router-dom";
-// import '../App.css';
 import Calendar from 'react-calendar';
-// import 'react-calendar/dist/Calendar.css';
 import TimeSelectDropdown from './TimeSelectDropdown';
 
 const Appointment = ({ id, client_name, date, time, appointments, setAppointments }) => {
@@ -34,8 +32,6 @@ const editAppointment = (event) => {
             <Card className="card-size" alt="Card image cap" class="card-img-top img-fluid" style={{ width: '18rem' }}>                
                 <Card.Body>
                     <Card.Title>{client_name}</Card.Title>                    
-                    {/* <Card.Text>Time: {time}</Card.Text> */}
-
                     <Calendar value={new Date(date)} />
                     <br />
                     <Card.Text>

@@ -1,7 +1,6 @@
 import { Button, Card } from 'react-bootstrap';
 import { useState, useEffect} from 'react';
 import { useHistory, useParams } from 'react-router';
-// import '../App.css';
 
 function EditClient() {
     const [name, setName] = useState('')
