@@ -217,7 +217,7 @@ We use `UnAuthenticatedApp` react component to display the `Sign Up` and `Login`
 
 The react front end of the project has a clients page and here is a screenshot of the clients page:
 
-![clients-page](https://user-images.githubusercontent.com/72527380/147842837-105e1ad7-fd4e-473c-a6aa-8ec7b0ece671.png)
+![clients-page](https://user-images.githubusercontent.com/72527380/148011120-789bbd1d-e371-4095-aeb2-6ae2cb9517cc.png)
 
 We have a `Clients` react component that makes a fetch API call (`GET /clients`) to the Rails backend API to fetch all the clients data that are present in the database, and then displays each client in the UI. We have a Client react component to render each client data in the UI.
 
@@ -231,7 +231,7 @@ When the user clicks on the `DELETE` button, it makes a `DELETE` request to the 
 
 The react front end of the project has an add client page and here is a screenshot of the add client page:
 
-![add-client-page](https://user-images.githubusercontent.com/72527380/148004483-9eb7d280-2bbd-416a-a8a1-441f72f5d554.png)
+![add-client-page](https://user-images.githubusercontent.com/72527380/148011152-3be4c06d-10d3-4f96-85db-c65d375fc7e8.png)
 
 We have a `NewClient` react component that posts the user typed data for the client being created from the frontend to the Rails backend API. It lets the logged in user add the client information (e.g. client name, number, email and img_url etc.).
 
@@ -241,7 +241,7 @@ When the user hits the Submit button after typing the client information, it mak
 
 The following screenshot shows the client edit page:
 
-![edit-client-page](https://user-images.githubusercontent.com/72527380/147842982-d543b5f1-7acd-4718-9a2e-f3e5ea79bef8.png)
+![edit-client-page](https://user-images.githubusercontent.com/72527380/148011172-2bd55df5-15ec-42d7-b854-7e4a929e9290.png)
 
 We have `EditClient` react component that fetches the current data for the client being edited from the backend Rails API. And, then it lets the logged in user edit the client information (e.g. name, number, email, img_url etc.). When the user hits the Submit button, it makes a fetch (`PATCH clients/:id`) API call to the backend Rails API with the edited client information in the request body and the client data is updated in the backend database accordingly.
 
@@ -249,9 +249,9 @@ We have `EditClient` react component that fetches the current data for the clien
 
  The react front end of the project has a appointments page and here is a screenshot of the appointments page:
 
- ![appointments-page](https://user-images.githubusercontent.com/72527380/147857886-baa21cd7-6a3e-4392-8970-30c48bf65407.png)
+![appointments-page](https://user-images.githubusercontent.com/72527380/148011196-ecdac947-9c6d-40a5-883d-694f111fa8d2.png)
 
- We have a `AppointmentsContainer` react component that makes a fetch API (`GET /appointment`) call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have an `Appointment` react component to render each appointment data in the UI.
+We have a `AppointmentsContainer` react component that makes a fetch API (`GET /appointment`) call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have an `Appointment` react component to render each appointment data in the UI.
 
  We have `EDIT` and `DELETE` buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
 
@@ -261,7 +261,7 @@ We have `EditClient` react component that fetches the current data for the clien
 
 The react front end of the project has an add appointment page and here is a screenshot of the add appointments page:
 
-![Add-Appointment](https://user-images.githubusercontent.com/72527380/147858776-6b2b2a17-471a-4e53-963a-6a2c768b0730.png)
+![add-appointment-page](https://user-images.githubusercontent.com/72527380/148011222-f74267ee-5f7c-4842-995e-b989989f5b36.png)
 
 We have an `AppointmentForm` react component that posts the current data for the appointment being added from the frontend to the Rails backend API. It lets the logged in user add the appointment information (e.g. client name, date, and time).
 
@@ -277,6 +277,6 @@ When the user hits the Submit button after choosing the appointment information,
 
 The following screenshot shows the appointment edit page:
 
-![edit-appointment-page](https://user-images.githubusercontent.com/72527380/147993766-f9e4ac5a-553a-444c-8b53-6f81d3abd5f0.png)
+![edit-appointment-page](https://user-images.githubusercontent.com/72527380/148011239-6813b22a-345f-461a-b8ea-e2ca4a2cad30.png)
 
 We have `EditAppointment` react component that fetches the current data for the appointment being edited from the backend Rails API. And, then it lets the logged in user edit the appointment information (e.g. client name, date, and time). When the user hits the Submit button, it makes a fetch (`PATCH /appointments/:id`) API call to the backend Rails API with the edited appointment information in the request body and the appointment data is updated in the backend database accordingly. We re-used all the 3 components here inside the `EditAppointment` react component (`ClientsDropdown`, `Calendar` and `TimeSelectDropdown`) that were used and described in the `AppointmentForm` react component section above.
