@@ -201,6 +201,18 @@ We have `Signup` react component that posts the user typed data for the user bei
 
 When the user hits the `Sign Up` button after typing the user information, it makes a `POST /signup` API call to the backend Rails API with the user information in the request body and the user record is created and saved in the backend database. And, the user is also logged into the application. We use `localStorage` to store the current user information to identify the currently signed in user.
 
+ # Login Page
+
+The react front end of the project has log in page and here is a screenshot of the log in page:
+
+TODO: login page screenshot
+
+We have `Login` react component that posts the user typed data for the user being logged in from the frontend to the Rails backend API. It lets the user type the username and password.
+
+When the user hits the `Login` button after typing the user information, it makes a `POST /login` API call to the backend Rails API with the user information in the request body and the user is authenticated using their username and password. If the user types the username and password correctly, the API returns the 200 OK response along with the user information. If the user typed the username/password wrong, then the API returns an `unauthorized` response. When the user is logged into the application successfully, we use `localStorage` to store the current user information to identify the currently signed in user.
+
+We use `UnAuthenticatedApp` react component to display the `Sign Up` and `Login` options to the user when they visit the homepage of the application. When the user is logged in successfully, we use `AuthenticatedApp` react component to render the application.
+
 # Clients page
 
 The react front end of the project has a clients page and here is a screenshot of the clients page:
