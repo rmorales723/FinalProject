@@ -205,7 +205,7 @@ When the user hits the `Sign Up` button after typing the user information, it ma
 
 The react front end of the project has log in page and here is a screenshot of the log in page:
 
-TODO: login page screenshot
+![Home-page](https://user-images.githubusercontent.com/72527380/148009305-0ee9fcc4-b7ed-4b92-91c0-06486b440f08.png)
 
 We have `Login` react component that posts the user typed data for the user being logged in from the frontend to the Rails backend API. It lets the user type the username and password.
 
