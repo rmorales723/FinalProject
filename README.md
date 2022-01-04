@@ -205,6 +205,16 @@ We have `EDIT` and `DELETE` buttons that give the signed in user the ability to 
 
 When the user clicks on the `DELETE` button, it makes a `DELETE` request to the Rails backend API and deletes the client record from the database.
 
+ # Add Client page
+
+The react front end of the project has an add client page and here is a screenshot of the add client page:
+
+TODO: Screenshot attach
+
+We have a `NewClient` react component that posts the user typed data for the client being created from the frontend to the Rails backend API. It lets the logged in user add the client information (e.g. client name, number, email and img_url etc.).
+
+When the user hits the Submit button after typing the client information, it makes a `POST` API call to the backend Rails API and the client record is created and saved in the backend database.
+
 # Client EDIT page:
 
 The following screenshot shows the client edit page:
