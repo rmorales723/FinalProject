@@ -199,9 +199,11 @@ The react front end of the project has a clients page and here is a screenshot o
 
 We have a `Clients` react component that makes a fetch API call to the Rails backend API to fetch all the clients data that are present in the database, and then displays each client in the UI. We have a Client react component to render each client data in the UI.
 
-We have a StarRating component to show the rating for each client. The logged in user (Trainer) can click on a specific star to update the rating for that particular client. It makes a fetch API call (PUT type) and updates the rating of the corresponding client in the database and displays the updated rating star in the UI.
+We have a `StarRating` component to show the rating for each client. The logged in user (Trainer) can click on a specific star to update the rating for that particular client. It makes a fetch API call (PUT type) and updates the rating of the corresponding client in the database and displays the updated rating star in the UI.
 
-We have EDIT and DELETE buttons that give the signed in user the ability to edit a client information and delete the client.
+We have `EDIT` and `DELETE` buttons that give the signed in user the ability to edit a client information and delete the client.
+
+When the user clicks on the `DELETE` button, it makes a DELETE request to the Rails backend API and deletes the client record from the database.
 
 # Client EDIT page:
 
@@ -209,8 +211,8 @@ The following screenshot shows the client edit page:
 
 ![edit-client-page](https://user-images.githubusercontent.com/72527380/147842982-d543b5f1-7acd-4718-9a2e-f3e5ea79bef8.png)
 
-We have `EditClient` react component that fetches the current data for the client being edited from the backend Rails API. And, then it lets the logged in user edit the client information (e.g. name, number, email, img_url). When the user hits the Submit button, it makes a fetch (PATCH type)
- API call to the backend Rails API and the client data is updated in the backend database.
+We have `EditClient` react component that fetches the current data for the client being edited from the backend Rails API. And, then it lets the logged in user edit the client information (e.g. name, number, email, img_url etc.). When the user hits the Submit button, it makes a fetch (PATCH type)
+API call to the backend Rails API and the client data is updated in the backend database.
 
  # Appointments page
 
@@ -218,7 +220,7 @@ We have `EditClient` react component that fetches the current data for the clien
 
  ![appointments-page](https://user-images.githubusercontent.com/72527380/147857886-baa21cd7-6a3e-4392-8970-30c48bf65407.png)
 
- We have a `Appointments` react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have a Appointment react component to render each appointment data in the UI. 
+ We have a `AppointmentsContainer` react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have an `Appointment` react component to render each appointment data in the UI.
 
  We have EDIT and DELETE buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
 
