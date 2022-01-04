@@ -203,7 +203,7 @@ We have a `StarRating` component to show the rating for each client. The logged 
 
 We have `EDIT` and `DELETE` buttons that give the signed in user the ability to edit a client information and delete the client.
 
-When the user clicks on the `DELETE` button, it makes a DELETE request to the Rails backend API and deletes the client record from the database.
+When the user clicks on the `DELETE` button, it makes a `DELETE` request to the Rails backend API and deletes the client record from the database.
 
 # Client EDIT page:
 
@@ -222,7 +222,9 @@ API call to the backend Rails API and the client data is updated in the backend 
 
  We have a `AppointmentsContainer` react component that makes a fetch API call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have an `Appointment` react component to render each appointment data in the UI.
 
- We have EDIT and DELETE buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
+ We have `EDIT` and `DELETE` buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
+
+ When the user clicks on the `DELETE` button, it makes a `DELETE` request to the Rails backend API and deletes the appointment record from the database.
 
  # Add Appointment page
 
@@ -230,7 +232,15 @@ The react front end of the project has an add appointment page and here is a scr
 
 ![Add-Appointment](https://user-images.githubusercontent.com/72527380/147858776-6b2b2a17-471a-4e53-963a-6a2c768b0730.png)
 
-We have an `AppointmentForm` react component that posts the current data for the appointment being added from the frontend React API. And, then it lets the logged in user add the appointment information (e.g. name, date, and time). When the user hits the Submit button, it makes a Post API call to the backend Rails API and the client data is added to the backend database.
+We have an `AppointmentForm` react component that posts the current data for the appointment being added from the frontend to the Rails backend API. It lets the logged in user add the appointment information (e.g. client name, date, and time).
+
+We have `ClientsDropdown` react component that is used inside the `AppointmentForm` react component to display all the available clients from the Rails backend API.
+
+We have `TimeSelectDropdown` react component that is used inside the `AppointmentForm` react component to display all the available time options and selecting the time for the appointment.
+
+And, we are using `Calendar` component from the `react-calendar` library to display the calendar and let the user select a date for the appointment from the calendar.
+
+When the user hits the Submit button after choosing the appointment information, it makes a `POST` API call to the backend Rails API and the appointment record is created and saved in the backend database.
 
 # Appointment EDIT page:
 
