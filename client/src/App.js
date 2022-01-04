@@ -13,7 +13,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   // const [authChecked, setAuthChecked] = useState(false)
   
-
   useEffect(() => {
     const loggedInUserId = localStorage.getItem("currentUserId");
     setCurrentUser(loggedInUserId);

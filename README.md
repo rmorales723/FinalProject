@@ -189,7 +189,17 @@ You can use the following commands to run the application:
 
 ## Project Description
 Short description about the project
-This project creates appointments for clients that personal training with a specific trainer.....
+This project creates appointments for clients that personal training with a specific trainer.
+
+ # Sign Up Page
+
+The react front end of the project has sign up page and here is a screenshot of the sign up page:
+
+TODO: add sign up page screenshot here
+
+We have `Signup` react component that posts the user typed data for the user being created (signed up) from the frontend to the Rails backend API. It lets the user add the user information (e.g. name, username, password, skill, credential etc.).
+
+When the user hits the `Sign Up` button after typing the user information, it makes a `POST` API call to the backend Rails API and the user record is created and saved in the backend database. And, the user is also logged into the application. We use `localStorage` to store the current user information to identify the currently signed in user.
 
 # Clients page
 
