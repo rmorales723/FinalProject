@@ -280,7 +280,3 @@ The following screenshot shows the appointment edit page:
 ![edit-appointment-page](https://user-images.githubusercontent.com/72527380/147993766-f9e4ac5a-553a-444c-8b53-6f81d3abd5f0.png)
 
 We have `EditAppointment` react component that fetches the current data for the appointment being edited from the backend Rails API. And, then it lets the logged in user edit the appointment information (e.g. client name, date, and time). When the user hits the Submit button, it makes a fetch (`PATCH /appointments/:id`) API call to the backend Rails API with the edited appointment information in the request body and the appointment data is updated in the backend database accordingly. We re-used all the 3 components here inside the `EditAppointment` react component (`ClientsDropdown`, `Calendar` and `TimeSelectDropdown`) that were used and described in the `AppointmentForm` react component section above.
-
-
-## Trainer, Client, Appointment
-
