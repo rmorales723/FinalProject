@@ -209,7 +209,7 @@ The following screenshot shows the client edit page:
 
 ![edit-client-page](https://user-images.githubusercontent.com/72527380/147842982-d543b5f1-7acd-4718-9a2e-f3e5ea79bef8.png)
 
-We have `EditClient` react component that fetches the current data for the client being edited from the backend Rails API. And, then it lets the logged in user edit the client information (e.g. name, number, email, img_url). When the user hits the Submit button, it makes a fetch (PUT type)
+We have `EditClient` react component that fetches the current data for the client being edited from the backend Rails API. And, then it lets the logged in user edit the client information (e.g. name, number, email, img_url). When the user hits the Submit button, it makes a fetch (PATCH type)
  API call to the backend Rails API and the client data is updated in the backend database.
 
  # Appointments page
@@ -228,9 +228,15 @@ The react front end of the project has an add appointment page and here is a scr
 
 ![Add-Appointment](https://user-images.githubusercontent.com/72527380/147858776-6b2b2a17-471a-4e53-963a-6a2c768b0730.png)
 
-We have an `AppointmentForm` react component that posts the current data for the appointment being added from the frontend React API. And, then it lets the logged in user add the appointment information (e.g. name, date, and time). When the user hits the Submit button, it makes a Post (PUT type) API call to the backend Rails API and the client data is added to the backend database.
+We have an `AppointmentForm` react component that posts the current data for the appointment being added from the frontend React API. And, then it lets the logged in user add the appointment information (e.g. name, date, and time). When the user hits the Submit button, it makes a Post API call to the backend Rails API and the client data is added to the backend database.
 
- 
+# Appointment EDIT page:
+
+The following screenshot shows the client edit page:
+
+todo
+
+We have `EditAppointment` react component that fetches the current data for the appointment being edited from the backend Rails API. And, then it lets the logged in user edit the appointment information (e.g. name, date, and time). When the user hits the Submit button, it makes a fetch (PATCH type) API call to the backend Rails API and the appointment data is updated in the backend database.
 
 
 ## Trainer, Client, Appointment
