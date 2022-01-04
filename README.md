@@ -236,19 +236,19 @@ We have an `AppointmentForm` react component that posts the current data for the
 
 We have `ClientsDropdown` react component that is used inside the `AppointmentForm` react component to display all the available clients from the Rails backend API.
 
-We have `TimeSelectDropdown` react component that is used inside the `AppointmentForm` react component to display all the available time options and selecting the time for the appointment.
-
 And, we are using `Calendar` component from the `react-calendar` library to display the calendar and let the user select a date for the appointment from the calendar.
+
+We have `TimeSelectDropdown` react component that is used inside the `AppointmentForm` react component to display all the available time options and selecting the time for the appointment.
 
 When the user hits the Submit button after choosing the appointment information, it makes a `POST` API call to the backend Rails API and the appointment record is created and saved in the backend database.
 
 # Appointment EDIT page:
 
-The following screenshot shows the client edit page:
+The following screenshot shows the appointment edit page:
 
 ![edit-appointment-page](https://user-images.githubusercontent.com/72527380/147993766-f9e4ac5a-553a-444c-8b53-6f81d3abd5f0.png)
 
-We have `EditAppointment` react component that fetches the current data for the appointment being edited from the backend Rails API. And, then it lets the logged in user edit the appointment information (e.g. name, date, and time). When the user hits the Submit button, it makes a fetch (PATCH type) API call to the backend Rails API and the appointment data is updated in the backend database.
+We have `EditAppointment` react component that fetches the current data for the appointment being edited from the backend Rails API. And, then it lets the logged in user edit the appointment information (e.g. client name, date, and time). When the user hits the Submit button, it makes a fetch (`PATCH` type) API call to the backend Rails API and the appointment data is updated in the backend database. We re-used all the 3 components (`ClientsDropdown`, `Calendar` and `TimeSelectDropdown`) that were used and described in the `AppointmentForm` react component.
 
 
 ## Trainer, Client, Appointment
