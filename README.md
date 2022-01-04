@@ -195,7 +195,7 @@ This project creates appointments for clients that personal training with a spec
 
 The react front end of the project has sign up page and here is a screenshot of the sign up page:
 
-TODO: add sign up page screenshot here
+![signup-page](https://user-images.githubusercontent.com/72527380/148007887-445b7932-a649-4a7c-8977-12296b2aa716.png)
 
 We have `Signup` react component that posts the user typed data for the user being created (signed up) from the frontend to the Rails backend API. It lets the user add the user information (e.g. name, username, password, skill, credential etc.).
 
