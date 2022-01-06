@@ -217,7 +217,8 @@ We use `UnAuthenticatedApp` react component to display the `Sign Up` and `Login`
 
 The react front end of the project has a clients page and here is a screenshot of the clients page:
 
-![clients-page](https://user-images.githubusercontent.com/72527380/148011120-789bbd1d-e371-4095-aeb2-6ae2cb9517cc.png)
+
+
 
 We have a `Clients` react component that makes a fetch API call (`GET /clients`) to the Rails backend API to fetch all the clients data that are present in the database, and then displays each client in the UI. We have a Client react component to render each client data in the UI.
 
