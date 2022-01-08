@@ -1,10 +1,10 @@
-import { Button, Card } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
-import { Link } from "react-router-dom";
 import Calendar from 'react-calendar';
 import ClientsDropdown from './ClientsDropdown';
 import TimeSelectDropdown from './TimeSelectDropdown';
+import { Link } from "react-router-dom"
 
 function EditAppointment({currentUser}) {
     const { id } = useParams()
@@ -13,6 +13,7 @@ function EditAppointment({currentUser}) {
     const [clientId, setClientId] = useState('')
     const [date, setDate] = useState(new Date())
     const [time, setTime] = useState('')
+    const [errors, setErrors] = useState("")
 
     const [loading, setLoading] = useState(true)
 
@@ -46,7 +47,7 @@ function EditAppointment({currentUser}) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({                
+            body: JSON.stringify({
                 trainer_id: currentUser.currentUser,
                 client_id: clientId,
                 date: date,
@@ -58,8 +59,19 @@ function EditAppointment({currentUser}) {
                     res.json().then(() => {
                         history.push(`/appointments`);
                     })
+                } else {
+                    res.json().then(errors => {
+                        setErrors(errors.errors)
+                    })
                 }
             })
+    }
+
+    const displayError = () => {
+        console.log(`inside displayError: ${errors}`);
+        return errors.map(error => {
+            return <div className="alert alert-danger" role="alert">{error}</div>
+        })
     }
 
     return (
@@ -70,8 +82,11 @@ function EditAppointment({currentUser}) {
             <div className="form-outsider">
                 <div className="form-container">
                     <form onSubmit={handleOnSubmit}>
+                    {errors ?
+                        <Alert variant="danger">{errors && displayError()}</Alert> : <Alert variant="danger="></Alert>
+                    }
                     <p>EDIT APPOINTMENT</p>
-                    
+
                     <ClientsDropdown setClientId={setClientId} clientName={clientName} />
                     <br />
                     <Calendar
@@ -80,8 +95,8 @@ function EditAppointment({currentUser}) {
                     />
                     <br />
                     <TimeSelectDropdown time={time} setTime={setTime} />
-                    <br />                    
-                    <Button onClick={handleOnSubmit} class="btn btn-primary" to="/appointments">Back</Button>     
+                    <br />
+                    <Link class="btn btn-primary" to="/appointments">Back</Link>
                     <br />
                     <br />
                     <Button onClick={handleOnSubmit} variant="danger" type="submit">Submit</Button>{' '}

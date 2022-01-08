@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     end
 
     def update
-        @appointment.update(appointment_params)
+        @appointment.update!(appointment_params)
         render json: @appointment, status: :accepted
     end
 

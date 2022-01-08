@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { useHistory, useParams } from 'react-router';
-import { Button } from "react-bootstrap";
-import { Alert } from 'react-bootstrap'
+import { Button, Alert } from "react-bootstrap";
 import Calendar from 'react-calendar';
 import ClientsDropdown from './ClientsDropdown';
 import TimeSelectDropdown from './TimeSelectDropdown';
@@ -23,7 +22,7 @@ function AppointmentForm(currentUser) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({            
+        body: JSON.stringify({
             date: date,
             time: time,
             trainer_id: currentUser.currentUser,
@@ -44,6 +43,7 @@ function AppointmentForm(currentUser) {
 }
 
 const displayError = () => {
+    console.log(`inside displayError: ${errors}`);
     return errors.map(error => {
         return <div className="alert alert-danger" role="alert">{error}</div>
     })
@@ -65,7 +65,7 @@ return (
                     <ClientsDropdown setClientId={setClientId} />
 
                     <br />
-                    
+
                     <Calendar
                         onChange={setDate}
                         value={new Date(date)}
@@ -73,7 +73,7 @@ return (
                       <br />
                     <TimeSelectDropdown time={time} setTime={setTime} />
                       <br />
-                    <Button onClick={handleOnSubmit} type="submit">Submit</Button>{' '}                
+                    <Button onClick={handleOnSubmit} type="submit">Submit</Button>{' '}
                 </form>
                 <div className="new-appointment-form-container-container"> </div>
             </ div>
@@ -82,4 +82,3 @@ return (
 )
 }
 export default AppointmentForm;
-                    
