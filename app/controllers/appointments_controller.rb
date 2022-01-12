@@ -10,7 +10,6 @@ class AppointmentsController < ApplicationController
     def show
         appointment = Appointment.find_by(id: params[:id])
         render json: appointment, status: :ok
-        # render json: @appointment, status: :ok
     end
 
     def create

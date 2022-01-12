@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     skip_before_action :authorized, only: :create
-    # post '/login'
+    
     def create
         trainer = Trainer.find_by(username: params[:username])
         if trainer&.authenticate(params[:password])
@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
         end
     end
 
-    # delete '/logout'
     def destroy
         session.delete :trainer_id
         head :no_content

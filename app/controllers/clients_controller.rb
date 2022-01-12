@@ -8,7 +8,6 @@ class ClientsController < ApplicationController
     end
 
     def show
-        # client = Client.find_by(id: params[:id])
         render json: @client, status: :ok
     end
 
