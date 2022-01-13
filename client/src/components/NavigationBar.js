@@ -6,8 +6,8 @@ import { Button} from 'react-bootstrap';
 function NavigationBar({handleLogout}) {
     return (
         <div>
-            <Navbar>
-                <Nav className='container-fluid'>
+            <Navbar bg="light" expand="lg">
+                <Nav className="ml-auto">
                     <Nav.Link href="/clients">
                         <Button>CLIENTS</Button>
                     </Nav.Link>
@@ -20,9 +20,12 @@ function NavigationBar({handleLogout}) {
                     <Nav.Link href="/appointments/new">
                         <Button>ADD APPOINTMENT</Button>
                     </Nav.Link>
-                    <Nav.Link>
-                        <Button onClick={handleLogout}>Logout</Button>
+                    <ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/><ul/>
+                    <ul style={{float: 'right'}}>
+                    <Nav.Link >
+                        <Button class="float-right" onClick={handleLogout}>Logout</Button>
                     </Nav.Link>
+                    </ul>
                 </Nav>
             </Navbar>
         </div>
