@@ -1,9 +1,11 @@
 import React,{useEffect, useState} from 'react';
 import Appointment from './Appointment';
 import { Button, Card } from 'react-bootstrap';
+import Calendar from 'react-calendar';
 
 function AppointmentsContainer() {
     const [appointments, setAppointments] = useState([])
+    const [appointmentDates, setAppointmentDates] = useState([])
 
     useEffect(() => {
         try {
@@ -17,13 +19,34 @@ function AppointmentsContainer() {
           } catch (e) {
             alert(e);
           }
-    },[])
+    }, [])
 
+    if(appointments.length < 1) {
+      return <div>Loading...</div>
+    }
 
+    function appointmentDatess() {
+      // console.log('appointments', appointments);
+      // let apps = appointments.map(app => new Date(app.date))
+      const apps = appointments.map((app) => {
+        // console.log('app.date', app.date);
+        return new Date(app.date);
+      })
+      // console.log('apps', apps);
+      setAppointmentDates(apps);
+      // return apps;
+    }
 
-    const appointmentsToRender = () => {
-        return appointments.map((appointment) => <Appointment id={appointment.id} client_name = {appointment.client_name} date = {appointment.date} time = {appointment.time} appointments={appointments} setAppointments={setAppointments} /> )
-        }
+    // appointmentDatess();
+
+    const appointmentsToRender = () => {      
+      // console.log('appointmentDates', appointmentDates);        
+        // return appointments.map((appointment) => <Appointment id={appointment.id} client_name = {appointment.client_name} date = {appointment.date} time = {appointment.time} appointments={appointments} setAppointments={setAppointments} /> )
+        // return <Calendar value={appointmentDates} />
+        // return <Calendar defaultValue={[appointments[0].date, appointments[1].date, appointments[2].date]} />
+        return <Calendar value={['2017-01-01', '2017-08-01', appointments[0].date]} />
+        // return <Calendar value={[new Date(appointments[2].date), new Date(appointments[1].date)]} />
+    }
 
     return(
         <div style={{
