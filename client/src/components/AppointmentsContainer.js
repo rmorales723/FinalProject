@@ -20,6 +20,8 @@ function AppointmentsContainer() {
     const handleSelectedEvent = (event) => {
        setSelectedEvent(event)
        setModalState(true)
+       // redirect to the appointment page: http://localhost:4000/appointments/146/edit
+       // history.push(`/appointments/${e.id}/edit`)
     }
 
     const Modal = () => {
@@ -61,11 +63,9 @@ function AppointmentsContainer() {
       locales,
     })
 
-    const start = new Date('2022-01-21 19:00')
-    const end = new Date('2022-01-21 20:00')
-
     const myEventsList = appointments.map((app) => {
       return {
+        id: app.id,
         title: app.title,
         start: new Date(app.start),
         end: new Date(app.end)

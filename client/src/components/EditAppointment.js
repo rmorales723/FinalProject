@@ -108,7 +108,5 @@ function EditAppointment({currentUser}) {
     )
 }
 
-
-
 export default EditAppointment;
 
