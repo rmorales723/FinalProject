@@ -33,7 +33,6 @@ function EditAppointment({currentUser}) {
             })
     }
 
-
     if (loading) {
         return (
             <div> Loading!!! </div>
@@ -65,6 +64,17 @@ function EditAppointment({currentUser}) {
                     })
                 }
             })
+    }
+
+    const deleteAppointment = (event) => {
+        fetch(`/appointments/${event.target.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(() => {
+            history.push(`/appointments`);
+        });
     }
 
     const displayError = () => {
@@ -99,7 +109,10 @@ function EditAppointment({currentUser}) {
                     <Link class="btn btn-primary" to="/appointments">Back</Link>
                     <br />
                     <br />
-                    <Button onClick={handleOnSubmit} variant="danger" type="submit">Submit</Button>{' '}
+                    <Button onClick={handleOnSubmit} variant="danger" type="submit">Update Appointment</Button>{' '}
+                    <br />
+                    <br />
+                    <Button id={id} variant="danger" onClick={deleteAppointment}>Delete Appointment</Button>{' '}
                 <div className="new-member-form-container-container"> </div>
             </form>
             </div>

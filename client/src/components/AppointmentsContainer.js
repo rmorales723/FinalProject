@@ -11,17 +11,19 @@ import enUS from 'date-fns/locale/en-US'
 import format from 'date-fns/format'
 import parse from 'date-fns/parse'
 import getDay from 'date-fns/getDay'
+import { useHistory } from 'react-router';
 
 function AppointmentsContainer() {
     const [appointments, setAppointments] = useState([])
     const [selectedEvent, setSelectedEvent] = useState(undefined)
     const [modalState, setModalState] = useState(false)
+
+    const history = useHistory();
  
     const handleSelectedEvent = (event) => {
        setSelectedEvent(event)
        setModalState(true)
-       // redirect to the appointment page: http://localhost:4000/appointments/146/edit
-       // history.push(`/appointments/${e.id}/edit`)
+       history.push(`/appointments/${event.id}/edit`);
     }
 
     const Modal = () => {
