@@ -249,13 +249,15 @@ We have `EditClient` react component that fetches the current data for the clien
 
  The react front end of the project has a appointments page and here is a screenshot of the appointments page:
 
-![appointments-page](https://user-images.githubusercontent.com/72527380/148011196-ecdac947-9c6d-40a5-883d-694f111fa8d2.png)
+![appointments-page-2](https://user-images.githubusercontent.com/72527380/150889996-a7af76e4-1a09-41c5-a9d1-02d852f4499c.png)
 
 We have a `AppointmentsContainer` react component that makes a fetch API (`GET /appointment`) call to the Rails backend API to fetch all the appointments data that are present in the database, and then displays each appointment in the UI. We have an `Appointment` react component to render each appointment data in the UI.
 
- We have `EDIT` and `DELETE` buttons that give the signed in user the ability to edit a appointment information and delete the appointment.
+Implemented React mailer to send a confirmation email with the name, date, and time to the client confirming the appointment scheduled.
 
- When the user clicks on the `DELETE` button, it makes a `DELETE /appointments/:id` request to the Rails backend API and deletes the appointment record from the database.
+We have `EDIT` and `DELETE` buttons that give the signed in user the ability to edit a appointment information and delete the appointment. 
+
+When the user clicks on the `DELETE` button, it makes a `DELETE /appointments/:id` request to the Rails backend API and deletes the appointment record from the database.
 
  # Add Appointment page
 
