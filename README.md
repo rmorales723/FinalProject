@@ -189,7 +189,7 @@ You can use the following commands to run the application:
 
 ## Project Description
 Short description about the project
-This project creates appointments for clients that personal training with a specific trainer.
+This project creates appointments for clients with a personal trainer.
 
  # Sign Up Page
 
